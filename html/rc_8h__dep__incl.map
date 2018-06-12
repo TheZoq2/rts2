@@ -1,0 +1,11 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$helix_8h.html" title="Root header file for programming for Helix." alt="" coords="295,246,401,277"/>
+<area shape="rect" id="node11" href="$pmc_8h.html" title="include/pmc.h" alt="" coords="360,86,464,117"/>
+<area shape="rect" id="node19" href="$lock_8cc.html" title="ipc/lock.cc" alt="" coords="488,86,573,117"/>
+<area shape="rect" id="node21" href="$rc_8cc.html" title="ipc/rc.cc" alt="" coords="597,86,667,117"/>
+<area shape="rect" id="node5" href="$DumpStatsDaemon_8cc.html" title="A daemon to print process statistics every time interval." alt="" coords="5,326,221,357"/>
+<area shape="rect" id="node7" href="$cfifo__sink_8h.html" title="include/accelerator/cfifo_sink.h" alt="" coords="245,326,451,357"/>
+<area shape="rect" id="node9" href="$cfifo__source_8h.html" title="include/accelerator/cfifo_source.h" alt="" coords="475,326,696,357"/>
+<area shape="rect" id="node14" href="$mfifo_8h.html" title="include/mfifo.h" alt="" coords="385,166,492,197"/>
+<area shape="rect" id="node17" href="$pmc__sa_8h.html" title="include/pmc_sa.h" alt="" coords="516,166,641,197"/>
+</map>

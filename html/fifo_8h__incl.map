@@ -1,0 +1,21 @@
+<map id="G" name="G">
+<area shape="rect" id="node7" href="$api_8h.html" title="Global header file that includes all functions of the OS." alt="" coords="686,86,760,117"/>
+<area shape="rect" id="node11" href="$autoret_8h.html" title="autoret.h" alt="" coords="304,166,376,197"/>
+<area shape="rect" id="node15" href="$kernel__types_8h.html" title="sys/kernel_types.h" alt="" coords="228,486,362,517"/>
+<area shape="rect" id="node18" href="$stdlib_8h.html" title="stdlib.h" alt="" coords="472,246,534,277"/>
+<area shape="rect" id="node20" href="$malloc_8h.html" title="malloc.h" alt="" coords="472,326,544,357"/>
+<area shape="rect" id="node28" href="$device_8h.html" title="Declaration of functions that gives information about the hardware platform." alt="" coords="332,406,431,437"/>
+<area shape="rect" id="node39" href="$unistd_8h.html" title="unistd.h" alt="" coords="172,246,239,277"/>
+<area shape="rect" id="node51" href="$io_8h.html" title="Declaration of all I/O function, types and address macros." alt="" coords="1546,246,1612,277"/>
+<area shape="rect" id="node56" href="$kernel_8h.html" title="Declaration of all kernel functions." alt="" coords="1004,246,1098,277"/>
+<area shape="rect" id="node64" href="$hooks_8h.html" title="Hooks in kernel, to get specific call&#45;backs or information." alt="" coords="735,326,828,357"/>
+<area shape="rect" id="node88" href="$syscall_8h.html" title="System calls to kernel functions." alt="" coords="1134,166,1232,197"/>
+<area shape="rect" id="node95" href="$daemons_8h.html" title="All daemon definitions." alt="" coords="1575,166,1663,197"/>
+<area shape="rect" id="node101" href="$trace_8h.html" title="Tracing of process execution and phases." alt="" coords="44,406,106,437"/>
+<area shape="rect" id="node13" href="$helix__config_8h.html" title="Configuration of the OS." alt="" coords="818,566,946,597"/>
+<area shape="rect" id="node35" href="$ttypes_8h.html" title="ttypes.h" alt="" coords="524,406,591,437"/>
+<area shape="rect" id="node66" href="$pthread_8h.html" title="POSIX Pthread standard implementation." alt="" coords="1140,326,1218,357"/>
+<area shape="rect" id="node74" href="$signal_8h.html" title="signal.h" alt="" coords="1050,406,1116,437"/>
+<area shape="rect" id="node81" href="$lock_8h.html" title="lock.h" alt="" coords="818,406,874,437"/>
+<area shape="rect" id="node86" href="$mail_8h.html" title="Mailboxes: a simple system to pass integer values around." alt="" coords="1495,326,1551,357"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$buttons_8cc.html" title="Low&#45;level functions to handle input from the push buttons." alt="" coords="5,86,101,117"/>
+<area shape="rect" id="node5" href="$clock_8cc.html" title="Low&#45;level functions to use the clock peripheral, counting microseconds." alt="" coords="125,86,211,117"/>
+<area shape="rect" id="node7" href="$dvi_8cc.html" title="Low&#45;level functions to control the DVI port." alt="" coords="235,86,307,117"/>
+<area shape="rect" id="node9" href="$leds_8cc.html" title="Low&#45;level functions to control the LEDs." alt="" coords="331,86,411,117"/>
+<area shape="rect" id="node11" href="$newlibstubs_8cc.html" title="Implementation of the newlib stubs and syscalls." alt="" coords="435,86,557,117"/>
+<area shape="rect" id="node13" href="$timer_8cc.html" title="Low&#45;level functions to control the local timer for interrupts." alt="" coords="581,86,664,117"/>
+<area shape="rect" id="node15" href="$uart_8cc.html" title="Low&#45;level functions to use the UART." alt="" coords="688,86,763,117"/>
+</map>

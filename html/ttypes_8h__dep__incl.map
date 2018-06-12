@@ -1,0 +1,51 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$malloc_8h.html" title="include/malloc.h" alt="" coords="3466,86,3583,117"/>
+<area shape="rect" id="node103" href="$pmc_8h.html" title="include/pmc.h" alt="" coords="69,326,173,357"/>
+<area shape="rect" id="node133" href="$mc_8h.html" title="Implementation of a memory consistency model." alt="" coords="1414,246,1510,277"/>
+<area shape="rect" id="node155" href="$rc_8h.html" title="include/rc.h" alt="" coords="187,246,278,277"/>
+<area shape="rect" id="node162" href="$fixed_8h.html" title="include/fixed.h" alt="" coords="555,406,662,437"/>
+<area shape="rect" id="node5" href="$api_8h.html" title="Global header file that includes all functions of the OS." alt="" coords="2835,246,2958,277"/>
+<area shape="rect" id="node9" href="$helix_8h.html" title="Root header file for programming for Helix." alt="" coords="510,486,617,517"/>
+<area shape="rect" id="node23" href="$linfs_8cc.html" title="io/linfs.cc" alt="" coords="3123,406,3201,437"/>
+<area shape="rect" id="node28" href="$kernel_8cc.html" title="Implementation of all kernel functions." alt="" coords="867,406,985,437"/>
+<area shape="rect" id="node40" href="$malloc_8cc.html" title="Heap management." alt="" coords="3225,406,3345,437"/>
+<area shape="rect" id="node42" href="$cfifo_8h.html" title="An easy to use C&#45;HEAP fifo implementation." alt="" coords="545,326,646,357"/>
+<area shape="rect" id="node70" href="$dir_8cc.html" title="io/dir.cc" alt="" coords="4457,326,4526,357"/>
+<area shape="rect" id="node79" href="$device_8cc.html" title="Default implementation of the device information functions." alt="" coords="4550,326,4670,357"/>
+<area shape="rect" id="node82" href="$wrap__calloc_8cc.html" title="kernel/wrap_calloc.cc" alt="" coords="4694,326,4846,357"/>
+<area shape="rect" id="node84" href="$wrap__free_8cc.html" title="kernel/wrap_free.cc" alt="" coords="4870,326,5009,357"/>
+<area shape="rect" id="node86" href="$wrap__malloc_8cc.html" title="kernel/wrap_malloc.cc" alt="" coords="5033,326,5187,357"/>
+<area shape="rect" id="node88" href="$wrap__realloc_8cc.html" title="kernel/wrap_realloc.cc" alt="" coords="5262,326,5419,357"/>
+<area shape="rect" id="node100" href="$trace_8cc.html" title="Tracing of process execution and phases." alt="" coords="2697,326,2785,357"/>
+<area shape="rect" id="node111" href="$stdlib_8h.html" title="include/machine/stdlib.h" alt="" coords="1294,166,1459,197"/>
+<area shape="rect" id="node121" href="$memory_8h.html" title="include/memory.h" alt="" coords="4798,166,4926,197"/>
+<area shape="rect" id="node7" href="$fifo_8h.html" title="C&#45;HEAP kind of FIFO implementation using FIFO memories or shared heap." alt="" coords="2475,326,2571,357"/>
+<area shape="rect" id="node11" href="$pipe_8cc.html" title="Implementation of pipe() and friends." alt="" coords="2486,406,2571,437"/>
+<area shape="rect" id="node13" href="$io_8h.html" title="Declaration of all I/O function, types and address macros." alt="" coords="2859,326,2974,357"/>
+<area shape="rect" id="node16" href="$render_8h.html" title="include/render/render.h" alt="" coords="2251,406,2411,437"/>
+<area shape="rect" id="node21" href="$ringratecontrol_8h.html" title="include/accelerator/ringratecontrol.h" alt="" coords="2814,406,3049,437"/>
+<area shape="rect" id="node30" href="$LocalBuffer_8cc.html" title="com/LocalBuffer.cc" alt="" coords="3281,326,3417,357"/>
+<area shape="rect" id="node32" href="$OverlappingBuffer_8cc.html" title="com/OverlappingBuffer.cc" alt="" coords="1625,326,1798,357"/>
+<area shape="rect" id="node34" href="$SlidingBuffer_8cc.html" title="com/SlidingBuffer.cc" alt="" coords="1822,326,1966,357"/>
+<area shape="rect" id="node37" href="$llock_8h.html" title="include/llock.h" alt="" coords="3049,326,3155,357"/>
+<area shape="rect" id="node48" href="$syncevent_8h.html" title="include/syncevent.h" alt="" coords="982,326,1121,357"/>
+<area shape="rect" id="node59" href="$MallocDaemon_8cc.html" title="A daemon to handle all malloc (and friends) requests in predictable order, thread&#45;safe." alt="" coords="3441,326,3633,357"/>
+<area shape="rect" id="node61" href="$mapping_8cc.html" title="daemons/mapping.cc" alt="" coords="3657,326,3806,357"/>
+<area shape="rect" id="node63" href="$ProfilerDaemon_8cc.html" title="MicroBlaze profiling daemon." alt="" coords="3830,326,4025,357"/>
+<area shape="rect" id="node65" href="$TimerDaemon_8cc.html" title="Daemon to handle all timer calls." alt="" coords="4049,326,4235,357"/>
+<area shape="rect" id="node68" href="$bitshark_8h.html" title="include/bitshark/bitshark.h" alt="" coords="4259,326,4433,357"/>
+<area shape="rect" id="node72" href="$lock_8cc.html" title="ipc/lock.cc" alt="" coords="771,326,857,357"/>
+<area shape="rect" id="node74" href="$mc_8cc.html" title="ipc/mc.cc" alt="" coords="1195,326,1273,357"/>
+<area shape="rect" id="node77" href="$rc_8cc.html" title="ipc/rc.cc" alt="" coords="299,326,369,357"/>
+<area shape="rect" id="node90" href="$barrier_8cc.html" title="POSIX barrier implementation, with software cache coherency." alt="" coords="1990,326,2102,357"/>
+<area shape="rect" id="node92" href="$cond_8cc.html" title="POSIX condition implementation, with software cache coherency." alt="" coords="2126,326,2230,357"/>
+<area shape="rect" id="node94" href="$key_8cc.html" title="POSIX key implementation." alt="" coords="2254,326,2350,357"/>
+<area shape="rect" id="node96" href="$mutex_8cc.html" title="POSIX mutex implementation, with software cache coherency." alt="" coords="1491,326,1601,357"/>
+<area shape="rect" id="node98" href="$pthread_8cc.html" title="POSIX thread implementation for basic process management." alt="" coords="1347,326,1467,357"/>
+<area shape="rect" id="node19" href="$render_8cc.html" title="io/render.cc" alt="" coords="2423,486,2517,517"/>
+<area shape="rect" id="node25" href="$ramfile_8cc.html" title="io/ramfile.cc" alt="" coords="2646,406,2739,437"/>
+<area shape="rect" id="node45" href="$workqueue_8h.html" title="include/workqueue.h" alt="" coords="686,406,833,437"/>
+<area shape="rect" id="node51" href="$par_8h.html" title="Simple interface for starting threads for functions with multiple arguments." alt="" coords="321,406,419,437"/>
+<area shape="rect" id="node54" href="$pmc__sa_8h.html" title="include/pmc_sa.h" alt="" coords="113,486,238,517"/>
+<area shape="rect" id="node106" href="$mfifo_8h.html" title="include/mfifo.h" alt="" coords="67,406,174,437"/>
+</map>

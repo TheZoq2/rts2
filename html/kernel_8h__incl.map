@@ -1,0 +1,10 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$helix__config_8h.html" title="Configuration of the OS." alt="" coords="99,246,227,277"/>
+<area shape="rect" id="node7" href="$device_8h.html" title="Declaration of functions that gives information about the hardware platform." alt="" coords="27,86,125,117"/>
+<area shape="rect" id="node10" href="$kernel__types_8h.html" title="sys/kernel_types.h" alt="" coords="96,166,229,197"/>
+<area shape="rect" id="node18" href="$hooks_8h.html" title="Hooks in kernel, to get specific call&#45;backs or information." alt="" coords="705,86,799,117"/>
+<area shape="rect" id="node20" href="$pthread_8h.html" title="POSIX Pthread standard implementation." alt="" coords="417,86,495,117"/>
+<area shape="rect" id="node28" href="$signal_8h.html" title="signal.h" alt="" coords="643,166,709,197"/>
+<area shape="rect" id="node36" href="$lock_8h.html" title="lock.h" alt="" coords="256,86,312,117"/>
+<area shape="rect" id="node41" href="$mail_8h.html" title="Mailboxes: a simple system to pass integer values around." alt="" coords="823,86,879,117"/>
+</map>

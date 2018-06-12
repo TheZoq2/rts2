@@ -1,0 +1,23 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$pthread_8h.html" title="POSIX Pthread standard implementation." alt="" coords="1831,326,1909,357"/>
+<area shape="rect" id="node7" href="$helix__config_8h.html" title="Configuration of the OS." alt="" coords="614,566,742,597"/>
+<area shape="rect" id="node22" href="$syscall_8h.html" title="System calls to kernel functions." alt="" coords="1882,166,1981,197"/>
+<area shape="rect" id="node51" href="$api_8h.html" title="Global header file that includes all functions of the OS." alt="" coords="789,86,863,117"/>
+<area shape="rect" id="node58" href="$stdlib_8h.html" title="stdlib.h" alt="" coords="517,246,578,277"/>
+<area shape="rect" id="node74" href="$unistd_8h.html" title="unistd.h" alt="" coords="257,246,323,277"/>
+<area shape="rect" id="node120" href="$mc_8h.html" title="Implementation of a memory consistency model." alt="" coords="119,326,170,357"/>
+<area shape="rect" id="node9" href="$kernel__types_8h.html" title="sys/kernel_types.h" alt="" coords="314,486,447,517"/>
+<area shape="rect" id="node16" href="$signal_8h.html" title="signal.h" alt="" coords="1699,406,1766,437"/>
+<area shape="rect" id="node24" href="$kernel_8h.html" title="Declaration of all kernel functions." alt="" coords="1025,246,1118,277"/>
+<area shape="rect" id="node28" href="$device_8h.html" title="Declaration of functions that gives information about the hardware platform." alt="" coords="210,406,309,437"/>
+<area shape="rect" id="node36" href="$hooks_8h.html" title="Hooks in kernel, to get specific call&#45;backs or information." alt="" coords="709,326,802,357"/>
+<area shape="rect" id="node41" href="$lock_8h.html" title="lock.h" alt="" coords="434,406,490,437"/>
+<area shape="rect" id="node46" href="$mail_8h.html" title="Mailboxes: a simple system to pass integer values around." alt="" coords="826,326,882,357"/>
+<area shape="rect" id="node54" href="$autoret_8h.html" title="autoret.h" alt="" coords="407,166,479,197"/>
+<area shape="rect" id="node60" href="$malloc_8h.html" title="malloc.h" alt="" coords="511,326,583,357"/>
+<area shape="rect" id="node86" href="$io_8h.html" title="Declaration of all I/O function, types and address macros." alt="" coords="1346,246,1413,277"/>
+<area shape="rect" id="node95" href="$daemons_8h.html" title="All daemon definitions." alt="" coords="1027,166,1115,197"/>
+<area shape="rect" id="node109" href="$trace_8h.html" title="Tracing of process execution and phases." alt="" coords="23,406,85,437"/>
+<area shape="rect" id="node70" href="$ttypes_8h.html" title="ttypes.h" alt="" coords="514,406,581,437"/>
+<area shape="rect" id="node99" href="$fifo_8h.html" title="C&#45;HEAP kind of FIFO implementation using FIFO memories or shared heap." alt="" coords="1538,246,1586,277"/>
+</map>

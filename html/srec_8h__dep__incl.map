@@ -1,0 +1,4 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$srecloader_8cc.html" title="Default bootloader for the master core with S&#45;record loader." alt="" coords="5,86,179,117"/>
+<area shape="rect" id="node5" href="$srec_8cc.html" title="util/srec.cc" alt="" coords="203,86,288,117"/>
+</map>

@@ -1,0 +1,13 @@
+<map id="G" name="G">
+<area shape="rect" id="node1" href="$classAccelerator.html" title="Accelerator" alt="" coords="5,165,96,195"/>
+<area shape="rect" id="node3" href="$classCfifo__sink.html" title="Cfifo_sink\&lt; Type \&gt;" alt="" coords="153,5,289,35"/>
+<area shape="rect" id="node5" href="$classCfifo__source.html" title="Cfifo_source\&lt; Type \&gt;" alt="" coords="145,58,297,89"/>
+<area shape="rect" id="node7" href="$classCordicMix.html" title="CordicMix" alt="" coords="180,111,263,142"/>
+<area shape="rect" id="node9" href="$classCordicQuad.html" title="CordicQuad" alt="" coords="175,165,268,195"/>
+<area shape="rect" id="node11" href="$classFirFilter.html" title="FirFilter" alt="" coords="188,218,255,249"/>
+<area shape="rect" id="node13" href="$classReader.html" title="Reader" alt="" coords="188,271,255,302"/>
+<area shape="rect" id="node17" href="$classWriter.html" title="Writer" alt="" coords="193,325,249,355"/>
+<area shape="rect" id="node15" href="$classCreditToAddr.html" title="CreditToAddr" alt="" coords="347,271,451,302"/>
+<area shape="rect" id="node19" href="$classCore.html" title="Core" alt="" coords="373,325,424,355"/>
+<area shape="rect" id="node21" href="$classRingDma.html" title="RingDma" alt="" coords="360,378,437,409"/>
+</map>

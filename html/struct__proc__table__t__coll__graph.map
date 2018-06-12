@@ -1,0 +1,15 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$structsync__event__entry__t.html" title="sync_event_entry_t" alt="" coords="17,518,151,549"/>
+<area shape="rect" id="node5" href="$structproc__local__t.html" title="proc_local_t" alt="" coords="175,518,268,549"/>
+<area shape="rect" id="node7" href="$unionlck__admin__t.html" title="lck_admin_t" alt="" coords="175,419,268,450"/>
+<area shape="rect" id="node9" href="$structlck__daemon__admin__t.html" title="lck_daemon_admin_t" alt="" coords="75,321,224,351"/>
+<area shape="rect" id="node11" href="$structlck__daemon__locks__t.html" title="lck_daemon_locks_t" alt="" coords="21,222,165,253"/>
+<area shape="rect" id="node13" href="$struct__lck__daemon__lock__t.html" title="_lck_daemon_lock_t" alt="" coords="5,37,149,67"/>
+<area shape="rect" id="node16" href="$structlck__my__locks__t.html" title="lck_my_locks_t" alt="" coords="216,222,328,253"/>
+<area shape="rect" id="node18" href="$struct__lck__my__lock__t.html" title="_lck_my_lock_t" alt="" coords="227,37,339,67"/>
+<area shape="rect" id="node22" href="$structsigaction.html" title="sigaction" alt="" coords="292,518,367,549"/>
+<area shape="rect" id="node24" href="$structsiginfo__t.html" title="siginfo_t" alt="" coords="365,419,435,450"/>
+<area shape="rect" id="node26" href="$unionsigval.html" title="sigval" alt="" coords="332,321,391,351"/>
+<area shape="rect" id="node29" href="$structchannel__t.html" title="channel_t" alt="" coords="391,518,468,549"/>
+<area shape="rect" id="node31" href="$structproc__context__t.html" title="The context of a process." alt="" coords="492,518,599,549"/>
+</map>

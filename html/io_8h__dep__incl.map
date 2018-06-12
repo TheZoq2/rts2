@@ -1,0 +1,51 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$api_8h.html" title="Global header file that includes all functions of the OS." alt="" coords="1949,86,2072,117"/>
+<area shape="rect" id="node9" href="$fifo_8cc.html" title="Implementation of several FIFO functions." alt="" coords="459,246,536,277"/>
+<area shape="rect" id="node32" href="$render_8h.html" title="include/render/render.h" alt="" coords="2232,246,2392,277"/>
+<area shape="rect" id="node35" href="$render_8cc.html" title="io/render.cc" alt="" coords="2265,326,2359,357"/>
+<area shape="rect" id="node47" href="$ringratecontrol_8h.html" title="include/accelerator/ringratecontrol.h" alt="" coords="3707,166,3941,197"/>
+<area shape="rect" id="node51" href="$bitshark_8cc.html" title="bitshark/bitshark.cc" alt="" coords="3745,246,3879,277"/>
+<area shape="rect" id="node55" href="$newlibstubs_8cc.html" title="Implementation of the newlib stubs and syscalls." alt="" coords="4067,166,4189,197"/>
+<area shape="rect" id="node79" href="$srecloader_8cc.html" title="Default bootloader for the master core with S&#45;record loader." alt="" coords="4168,86,4341,117"/>
+<area shape="rect" id="node82" href="$accelerator_8h.html" title="include/accelerator/accelerator.h" alt="" coords="4365,86,4584,117"/>
+<area shape="rect" id="node85" href="$buttons_8cc.html" title="Low&#45;level functions to handle input from the push buttons." alt="" coords="4492,166,4588,197"/>
+<area shape="rect" id="node87" href="$iodebug_8h.html" title="Macros to prevent access to peripherals which are not available in simulation." alt="" coords="4760,86,4856,117"/>
+<area shape="rect" id="node90" href="$clock_8cc.html" title="Low&#45;level functions to use the clock peripheral, counting microseconds." alt="" coords="4612,166,4697,197"/>
+<area shape="rect" id="node92" href="$dvi_8cc.html" title="Low&#45;level functions to control the DVI port." alt="" coords="4721,166,4793,197"/>
+<area shape="rect" id="node94" href="$leds_8cc.html" title="Low&#45;level functions to control the LEDs." alt="" coords="4817,166,4897,197"/>
+<area shape="rect" id="node97" href="$timer_8cc.html" title="Low&#45;level functions to control the local timer for interrupts." alt="" coords="4921,166,5004,197"/>
+<area shape="rect" id="node99" href="$uart_8cc.html" title="Low&#45;level functions to use the UART." alt="" coords="5028,166,5103,197"/>
+<area shape="rect" id="node103" href="$file_8cc.html" title="Implementation of file related unistd (stub) functions." alt="" coords="5032,86,5101,117"/>
+<area shape="rect" id="node106" href="$linfs_8cc.html" title="io/linfs.cc" alt="" coords="5125,86,5203,117"/>
+<area shape="rect" id="node109" href="$ramfile_8cc.html" title="io/ramfile.cc" alt="" coords="5227,86,5320,117"/>
+<area shape="rect" id="node115" href="$mail_8cc.html" title="Send and receive functions for mailboxes." alt="" coords="5344,86,5429,117"/>
+<area shape="rect" id="node117" href="$kernel_8cc.html" title="Implementation of all kernel functions." alt="" coords="5453,86,5571,117"/>
+<area shape="rect" id="node119" href="$profiling_8cc.html" title="Memory and MicroBlaze profiling information." alt="" coords="5595,86,5699,117"/>
+<area shape="rect" id="node121" href="$srec_8cc.html" title="util/srec.cc" alt="" coords="5723,86,5808,117"/>
+<area shape="rect" id="node5" href="$fifo_8h.html" title="C&#45;HEAP kind of FIFO implementation using FIFO memories or shared heap." alt="" coords="645,166,741,197"/>
+<area shape="rect" id="node7" href="$helix_8h.html" title="Root header file for programming for Helix." alt="" coords="1817,326,1924,357"/>
+<area shape="rect" id="node11" href="$pipe_8cc.html" title="Implementation of pipe() and friends." alt="" coords="1480,246,1565,277"/>
+<area shape="rect" id="node14" href="$LocalBuffer_8cc.html" title="com/LocalBuffer.cc" alt="" coords="1237,166,1373,197"/>
+<area shape="rect" id="node16" href="$OverlappingBuffer_8cc.html" title="com/OverlappingBuffer.cc" alt="" coords="1397,166,1571,197"/>
+<area shape="rect" id="node18" href="$SlidingBuffer_8cc.html" title="com/SlidingBuffer.cc" alt="" coords="1595,166,1739,197"/>
+<area shape="rect" id="node21" href="$llock_8h.html" title="include/llock.h" alt="" coords="5,166,112,197"/>
+<area shape="rect" id="node24" href="$malloc_8cc.html" title="Heap management." alt="" coords="119,246,239,277"/>
+<area shape="rect" id="node26" href="$cfifo_8h.html" title="An easy to use C&#45;HEAP fifo implementation." alt="" coords="1864,246,1965,277"/>
+<area shape="rect" id="node29" href="$syncevent_8h.html" title="include/syncevent.h" alt="" coords="2131,166,2269,197"/>
+<area shape="rect" id="node39" href="$MallocDaemon_8cc.html" title="A daemon to handle all malloc (and friends) requests in predictable order, thread&#45;safe." alt="" coords="1915,166,2107,197"/>
+<area shape="rect" id="node41" href="$mapping_8cc.html" title="daemons/mapping.cc" alt="" coords="2344,166,2493,197"/>
+<area shape="rect" id="node43" href="$ProfilerDaemon_8cc.html" title="MicroBlaze profiling daemon." alt="" coords="2517,166,2712,197"/>
+<area shape="rect" id="node45" href="$TimerDaemon_8cc.html" title="Daemon to handle all timer calls." alt="" coords="2736,166,2923,197"/>
+<area shape="rect" id="node49" href="$bitshark_8h.html" title="include/bitshark/bitshark.h" alt="" coords="3509,166,3683,197"/>
+<area shape="rect" id="node53" href="$dir_8cc.html" title="io/dir.cc" alt="" coords="2947,166,3016,197"/>
+<area shape="rect" id="node57" href="$cxx__atomicity_8cc.html" title="ipc/cxx_atomicity.cc" alt="" coords="3040,166,3181,197"/>
+<area shape="rect" id="node59" href="$lock_8cc.html" title="ipc/lock.cc" alt="" coords="3205,166,3291,197"/>
+<area shape="rect" id="node61" href="$mc_8cc.html" title="ipc/mc.cc" alt="" coords="3315,166,3392,197"/>
+<area shape="rect" id="node64" href="$rc_8cc.html" title="ipc/rc.cc" alt="" coords="3416,166,3485,197"/>
+<area shape="rect" id="node66" href="$api_8cc.html" title="Implementation of some generic non&#45;kernel OS functions." alt="" coords="237,166,336,197"/>
+<area shape="rect" id="node68" href="$device_8cc.html" title="Default implementation of the device information functions." alt="" coords="360,166,480,197"/>
+<area shape="rect" id="node70" href="$hooks_8cc.html" title="Support for hooks into specific system calls." alt="" coords="504,166,621,197"/>
+<area shape="rect" id="node73" href="$resource_8cc.html" title="kernel/resource.cc" alt="" coords="765,166,899,197"/>
+<area shape="rect" id="node75" href="$kernel_2signal_8cc.html" title="Signal handler functions." alt="" coords="923,166,1037,197"/>
+<area shape="rect" id="node77" href="$wrap__calloc_8cc.html" title="kernel/wrap_calloc.cc" alt="" coords="1061,166,1213,197"/>
+</map>

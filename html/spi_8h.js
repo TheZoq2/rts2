@@ -1,0 +1,27 @@
+var spi_8h =
+[
+    [ "spi_dump_cr", "spi_8h.html#a096997da20e80372033ffa76ba822f49", null ],
+    [ "spi_dump_sr", "spi_8h.html#a91123a3b4e0bc5650808b57dd4285ee2", null ],
+    [ "spi_get_cr", "spi_8h.html#aeaa4336abee4002864d88d122d276282", null ],
+    [ "spi_get_drr", "spi_8h.html#aa113da2790edd1b5bc29db32a033887f", null ],
+    [ "spi_get_sr", "spi_8h.html#a732e03927da8553cf12dc2ede19b193f", null ],
+    [ "spi_read_reg", "spi_8h.html#adacd41a50fcef4dfe7ab088ed14eef27", null ],
+    [ "spi_set_cr", "spi_8h.html#af47a283e5d34c2d49dd05e9741ee2ce9", null ],
+    [ "spi_set_dtr", "spi_8h.html#a9297ffe12dbf3a741e651ae20283a1c1", null ],
+    [ "spi_set_srr", "spi_8h.html#a75fb37dff87aef53ec97bb077bbb4191", null ],
+    [ "spi_write_reg", "spi_8h.html#a9acccf8e9d4f84fd250bc991db1d8edf", null ],
+    [ "XPS_SPI_BASE", "spi_8h.html#ae4bc4125acbd249bba071ce18d22c062", null ],
+    [ "XPS_SPI_SPICR", "spi_8h.html#a4fcba8bb36e9c516a4dc19d5ce93ebf0", null ],
+    [ "XPS_SPI_SPIDRR", "spi_8h.html#aa620f69079cecf112c02ca455651cd48", null ],
+    [ "XPS_SPI_SPIDTR", "spi_8h.html#a12e6d5de8fa3e8a756cdc69517aa6091", null ],
+    [ "XPS_SPI_SPISR", "spi_8h.html#afe4bdd4d7b7620856c5b972bafde4c4e", null ],
+    [ "XPS_SPI_SPISRR", "spi_8h.html#aa5bbc39609c6a5a629ccb14daa2b48f8", null ],
+    [ "XPS_SPI_SPISSR", "spi_8h.html#a709ab43cf6715dfe3985b67dadd63625", null ],
+    [ "XPS_SPI_SS_REG", "spi_8h.html#afe81c69dcbe5a60999d3eceecb46b480", null ],
+    [ "operator!=", "spi_8h.html#a4367c43007712238fe737428b1bf6214", null ],
+    [ "operator==", "spi_8h.html#aa65f36f4f8cfd3a21079001b6986f842", null ],
+    [ "spi_can_write", "spi_8h.html#aae133b4c26da31c1e125255dfb0836b4", null ],
+    [ "spi_reset", "spi_8h.html#ad54fa28ddaa05736fbd0e3aca32d486e", null ],
+    [ "spi_selftest", "spi_8h.html#ae35bc6e6a782165e4f162f54f969568f", null ],
+    [ "spi_transfer", "spi_8h.html#a74bd744d707040e8703c087f661ad56e", null ]
+];

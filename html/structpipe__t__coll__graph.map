@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$structpipe__admin__t.html" title="pipe_admin_t" alt="" coords="5,105,107,135"/>
+<area shape="rect" id="node4" href="$structpthread__mutex__t.html" title="pthread_mutex_t" alt="" coords="152,105,272,135"/>
+<area shape="rect" id="node6" href="$structpthread__mutexattr__t.html" title="pthread_mutexattr_t" alt="" coords="133,6,272,37"/>
+<area shape="rect" id="node8" href="$structpthread__cond__t.html" title="pthread_cond_t" alt="" coords="305,105,420,135"/>
+<area shape="rect" id="node10" href="$structpthread__condattr__t.html" title="pthread_condattr_t" alt="" coords="316,6,447,37"/>
+</map>

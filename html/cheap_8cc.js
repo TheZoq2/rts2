@@ -1,0 +1,26 @@
+var cheap_8cc =
+[
+    [ "MAKE_INFOFIFO_ADDR", "cheap_8cc.html#a8e85a81a0859faba60ec5bb9d751e811", null ],
+    [ "NOT_DEFINED", "cheap_8cc.html#a500822c521c7c220a6db1cb25a2d60ac", null ],
+    [ "NUM_FIFOS", "cheap_8cc.html#a7bee04ff11592238f605d3b8815c9faa", null ],
+    [ "acquire", "cheap_8cc.html#a86f8c6432022ff3ae605aed0177f7040", null ],
+    [ "claimData", "cheap_8cc.html#a08fe41a65a9ae17b945aea82f39b838f", null ],
+    [ "claimSpace", "cheap_8cc.html#a5bc9268889abeca89dae5e5c561ec665", null ],
+    [ "cleanDCache", "cheap_8cc.html#ad232d091a334d5253f4bf0ccebe3a944", null ],
+    [ "createFifo", "cheap_8cc.html#ac1d6c451452d867e4da2a69f69b222e7", null ],
+    [ "initFifo", "cheap_8cc.html#a214d1fece379aa3547e05dfe7fdebae6", null ],
+    [ "initFifoInfo", "cheap_8cc.html#a9a7076d748cac2d5de3cee2d206109a3", null ],
+    [ "initSemaphores", "cheap_8cc.html#a0e1f7d09f63c6f77528fd2f6bed8d958", null ],
+    [ "invalidateDCache", "cheap_8cc.html#a627e46455a472d1ecdcf71718c1abd8f", null ],
+    [ "invalidateDCacheMVA", "cheap_8cc.html#adea57dd9e4711e93559e6f21981c6c00", null ],
+    [ "lock", "cheap_8cc.html#a999424097360ebe6b03975e246d1ad36", null ],
+    [ "maximum", "cheap_8cc.html#aaf0508b0c79214d80ca7e37f62e47553", null ],
+    [ "openFifo", "cheap_8cc.html#a8df14fa946fe7ad7f20752efd068d509", null ],
+    [ "readFifo", "cheap_8cc.html#a4895c6303f5d51c533e155c88894c8ac", null ],
+    [ "release", "cheap_8cc.html#a416fec20b110bd395e0b86166b205664", null ],
+    [ "releaseData", "cheap_8cc.html#a73737c1b30e9d28e982c8b59a6c01611", null ],
+    [ "releaseSpace", "cheap_8cc.html#a94a8430edc3f133570def8705df31251", null ],
+    [ "unlock", "cheap_8cc.html#ab95d7d15d3e854c337f16a0552b2af16", null ],
+    [ "writeFifo", "cheap_8cc.html#a97dc1d9b18ae08746193f1d693083364", null ],
+    [ "_ddrbase", "cheap_8cc.html#a2979da41734d1ea92d850b7cc25c52b5", null ]
+];

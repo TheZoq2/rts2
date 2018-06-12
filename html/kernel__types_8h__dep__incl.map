@@ -1,0 +1,51 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$device_8h.html" title="Declaration of functions that gives information about the hardware platform." alt="" coords="924,86,1068,117"/>
+<area shape="rect" id="node5" href="$kernel_8h.html" title="Declaration of all kernel functions." alt="" coords="1837,166,1979,197"/>
+<area shape="rect" id="node9" href="$api_8h.html" title="Global header file that includes all functions of the OS." alt="" coords="1957,326,2080,357"/>
+<area shape="rect" id="node24" href="$syncevent_8h.html" title="include/syncevent.h" alt="" coords="3947,406,4085,437"/>
+<area shape="rect" id="node87" href="$autoret_8h.html" title="include/autoret.h" alt="" coords="1084,246,1204,277"/>
+<area shape="rect" id="node99" href="$malloc_8h.html" title="include/malloc.h" alt="" coords="680,246,797,277"/>
+<area shape="rect" id="node103" href="$pmc_8h.html" title="include/pmc.h" alt="" coords="343,406,447,437"/>
+<area shape="rect" id="node115" href="$mc_8h.html" title="Implementation of a memory consistency model." alt="" coords="2707,326,2803,357"/>
+<area shape="rect" id="node149" href="$pthread_8h.html" title="POSIX Pthread standard implementation." alt="" coords="3760,86,3883,117"/>
+<area shape="rect" id="node170" href="$lock_8h.html" title="include/lock.h" alt="" coords="1811,86,1915,117"/>
+<area shape="rect" id="node180" href="$unistd_8h.html" title="include/unistd.h" alt="" coords="3017,166,3132,197"/>
+<area shape="rect" id="node203" href="$ttypes_8h.html" title="include/ttypes.h" alt="" coords="376,166,491,197"/>
+<area shape="rect" id="node210" href="$trace_8h.html" title="Tracing of process execution and phases." alt="" coords="1469,246,1579,277"/>
+<area shape="rect" id="node216" href="$ramfile_8h.html" title="include/ramfile.h" alt="" coords="4235,86,4352,117"/>
+<area shape="rect" id="node13" href="$llock_8h.html" title="include/llock.h" alt="" coords="2005,406,2112,437"/>
+<area shape="rect" id="node18" href="$cfifo_8h.html" title="An easy to use C&#45;HEAP fifo implementation." alt="" coords="709,406,811,437"/>
+<area shape="rect" id="node38" href="$mc_8cc.html" title="ipc/mc.cc" alt="" coords="2504,406,2581,437"/>
+<area shape="rect" id="node44" href="$device_8cc.html" title="Default implementation of the device information functions." alt="" coords="480,406,600,437"/>
+<area shape="rect" id="node59" href="$trace_8cc.html" title="Tracing of process execution and phases." alt="" coords="1416,406,1504,437"/>
+<area shape="rect" id="node94" href="$profiling_8cc.html" title="Memory and MicroBlaze profiling information." alt="" coords="175,406,279,437"/>
+<area shape="rect" id="node107" href="$linfs_8cc.html" title="io/linfs.cc" alt="" coords="2979,326,3056,357"/>
+<area shape="rect" id="node113" href="$srecloader_8cc.html" title="Default bootloader for the master core with S&#45;record loader." alt="" coords="785,166,959,197"/>
+<area shape="rect" id="node133" href="$rc_8h.html" title="include/rc.h" alt="" coords="981,326,1072,357"/>
+<area shape="rect" id="node141" href="$fixed_8h.html" title="include/fixed.h" alt="" coords="43,246,149,277"/>
+<area shape="rect" id="node7" href="$daemons_8h.html" title="All daemon definitions." alt="" coords="1795,246,1931,277"/>
+<area shape="rect" id="node16" href="$malloc_8cc.html" title="Heap management." alt="" coords="2601,486,2721,517"/>
+<area shape="rect" id="node21" href="$workqueue_8h.html" title="include/workqueue.h" alt="" coords="1356,486,1503,517"/>
+<area shape="rect" id="node67" href="$kernel_8cc.html" title="Implementation of all kernel functions." alt="" coords="1583,406,1700,437"/>
+<area shape="rect" id="node71" href="$syscall_8h.html" title="System calls to kernel functions." alt="" coords="2309,246,2456,277"/>
+<area shape="rect" id="node11" href="$helix_8h.html" title="Root header file for programming for Helix." alt="" coords="1949,566,2056,597"/>
+<area shape="rect" id="node32" href="$MallocDaemon_8cc.html" title="A daemon to handle all malloc (and friends) requests in predictable order, thread&#45;safe." alt="" coords="2237,406,2429,437"/>
+<area shape="rect" id="node61" href="$DefaultTaskDaemon_8cc.html" title="Daemon for communication and synchronization in the SoC." alt="" coords="2104,326,2328,357"/>
+<area shape="rect" id="node65" href="$ShutdownDaemon_8cc.html" title="Implementation of a gracefull shutdown daemon." alt="" coords="3080,326,3291,357"/>
+<area shape="rect" id="node34" href="$ProfilerDaemon_8cc.html" title="MicroBlaze profiling daemon." alt="" coords="1197,406,1392,437"/>
+<area shape="rect" id="node36" href="$lock_8cc.html" title="ipc/lock.cc" alt="" coords="1845,406,1931,437"/>
+<area shape="rect" id="node40" href="$rc_8cc.html" title="ipc/rc.cc" alt="" coords="1053,406,1123,437"/>
+<area shape="rect" id="node42" href="$api_8cc.html" title="Implementation of some generic non&#45;kernel OS functions." alt="" coords="4160,406,4259,437"/>
+<area shape="rect" id="node47" href="$barrier_8cc.html" title="POSIX barrier implementation, with software cache coherency." alt="" coords="2605,406,2717,437"/>
+<area shape="rect" id="node49" href="$cond_8cc.html" title="POSIX condition implementation, with software cache coherency." alt="" coords="3391,406,3495,437"/>
+<area shape="rect" id="node51" href="$key_8cc.html" title="POSIX key implementation." alt="" coords="2944,406,3040,437"/>
+<area shape="rect" id="node53" href="$mutex_8cc.html" title="POSIX mutex implementation, with software cache coherency." alt="" coords="3064,406,3173,437"/>
+<area shape="rect" id="node55" href="$pthread_8cc.html" title="POSIX thread implementation for basic process management." alt="" coords="3197,406,3317,437"/>
+<area shape="rect" id="node57" href="$stats_8cc.html" title="posix/stats.cc" alt="" coords="3669,406,3771,437"/>
+<area shape="rect" id="node27" href="$par_8h.html" title="Simple interface for starting threads for functions with multiple arguments." alt="" coords="4049,486,4148,517"/>
+<area shape="rect" id="node30" href="$pprintf_8cc.html" title="io/pprintf.cc" alt="" coords="4233,566,4321,597"/>
+<area shape="rect" id="node90" href="$profiling_8h.html" title="Profiling support for the memory and MicroBlaze." alt="" coords="781,326,907,357"/>
+<area shape="rect" id="node155" href="$linfs_8h.html" title="include/linfs.h" alt="" coords="2885,246,2987,277"/>
+<area shape="rect" id="node186" href="$pipe_8h.html" title="include/pipe.h" alt="" coords="4264,246,4368,277"/>
+<area shape="rect" id="node192" href="$getopt_8h.html" title="include/getopt.h" alt="" coords="3213,246,3328,277"/>
+</map>

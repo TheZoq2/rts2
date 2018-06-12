@@ -1,0 +1,12 @@
+<map id="G" name="G">
+<area shape="rect" id="node5" href="$info__app_8h.html" title="info_app.h" alt="" coords="323,86,405,117"/>
+<area shape="rect" id="node7" href="$memmap_8h.html" title="memmap.h" alt="" coords="5,246,93,277"/>
+<area shape="rect" id="node9" href="$cheap_8h.html" title="cheap.h" alt="" coords="285,166,355,197"/>
+<area shape="rect" id="node13" href="$stdlib_8h.html" title="stdlib.h" alt="" coords="203,246,264,277"/>
+<area shape="rect" id="node41" href="$InfoFIFO_8h.html" title="InfoFIFO.h" alt="" coords="376,246,456,277"/>
+<area shape="rect" id="node15" href="$malloc_8h.html" title="malloc.h" alt="" coords="197,326,269,357"/>
+<area shape="rect" id="node22" href="$helix__config_8h.html" title="Configuration of the OS." alt="" coords="157,566,285,597"/>
+<area shape="rect" id="node24" href="$kernel__types_8h.html" title="sys/kernel_types.h" alt="" coords="155,486,288,517"/>
+<area shape="rect" id="node27" href="$device_8h.html" title="Declaration of functions that gives information about the hardware platform." alt="" coords="271,406,369,437"/>
+<area shape="rect" id="node34" href="$ttypes_8h.html" title="ttypes.h" alt="" coords="129,406,196,437"/>
+</map>

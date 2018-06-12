@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['o',['o',['../classCFifo.html#a9b8b9f1a57d27447c6dbcd310ef335ed',1,'CFifo']]],
+  ['offs',['offs',['../struct__linfs__t.html#a17b5e19b1e2ef7fe80440ad9cd8819ff',1,'_linfs_t']]],
+  ['offset',['offset',['../structDIR.html#a1b372aa960cd3294e885ef760a8dfafd',1,'DIR']]],
+  ['oldptr',['oldptr',['../structmalloc__buffer__t.html#a966c4d3c8375e1ecabc44df93b46e7bc',1,'malloc_buffer_t']]],
+  ['op1',['op1',['../structtdcmd__t.html#abc4062b3855e10e53bc97d80539d7756',1,'tdcmd_t']]],
+  ['op2',['op2',['../structtdcmd__t.html#a1790344a646e508d7656797dc57a345c',1,'tdcmd_t']]],
+  ['open',['open',['../classWorkQueue.html#ab9670398ee4b86d5363e761988421367',1,'WorkQueue']]],
+  ['open_5fmode',['open_mode',['../structramfile__entry__t.html#a53566d1d534597433d38f4e2fb99feb3',1,'ramfile_entry_t']]],
+  ['optarg',['optarg',['../getopt_8cc.html#adb50a0eab9fed92fc3bfc7dfa4f2c410',1,'getopt.cc']]],
+  ['opterr',['opterr',['../getopt_8cc.html#ae30f05ee1e2e5652f174a35c7875d25e',1,'getopt.cc']]],
+  ['optind',['optind',['../getopt_8cc.html#ad5e1c16213bbee2d5e8cc363309f418c',1,'getopt.cc']]],
+  ['optopt',['optopt',['../getopt_8cc.html#a475b8db98445da73e5f62a1ef6324b95',1,'getopt.cc']]],
+  ['ordering',['ordering',['../getopt_8cc.html#a8d84eaeef96bb8f0b594cba826a9bd9c',1,'getopt.cc']]],
+  ['os_5fstate',['os_state',['../kernel_8h.html#a947c0bc119bba11ab8af50f94b3c474d',1,'kernel.h']]],
+  ['overrun',['overrun',['../struct__timer__event__t.html#a3ae4154d96086b4776ed49ac8cbba9a0',1,'_timer_event_t']]],
+  ['own',['own',['../struct__lck__my__lock__t.html#a35991fd4faebdbfbb25c68982aad74a7',1,'_lck_my_lock_t']]],
+  ['own_5f',['own_',['../struct__lck__my__lock__t.html#a4d5914a5bbb6b2a0907bf2a26f66f082',1,'_lck_my_lock_t']]],
+  ['owner',['owner',['../structaccList.html#abecc954e935abd46951cc98c20774086',1,'accList::owner()'],['../structmalloc__buffer__t.html#a98de43c3ba86eeff080d129fff2d6583',1,'malloc_buffer_t::owner()'],['../struct__lck__daemon__lock__t.html#a2e51ef4ad5511efabc71417d611fb12e',1,'_lck_daemon_lock_t::owner()'],['../structHNTAG.html#a2c9ca324acea59f0f98b7f02fb323626',1,'HNTAG::owner()']]]
+];

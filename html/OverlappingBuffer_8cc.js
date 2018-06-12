@@ -1,0 +1,26 @@
+var OverlappingBuffer_8cc =
+[
+    [ "CREATE_PTR", "OverlappingBuffer_8cc.html#a31e9692c4c4c27f060474dc49d5ee372", null ],
+    [ "MAX_WRAP_COUNT", "OverlappingBuffer_8cc.html#aa7a58187bdbd96968a6e112f8ff7f2b5", null ],
+    [ "NEXT_WRAP", "OverlappingBuffer_8cc.html#a1433ea4e606fb76432bb5004d0cda98a", null ],
+    [ "WINDOW_PTR", "OverlappingBuffer_8cc.html#af7d79e451f3273ac647e0b4d3a0a1616", null ],
+    [ "WRAP_CTR", "OverlappingBuffer_8cc.html#ad7e44c28e5ad929415e6d7e06a66d55a", null ],
+    [ "acquireDataCBOL", "OverlappingBuffer_8cc.html#a6dcd1c8ede4d21cd29f15c973ded2e2f", null ],
+    [ "acquireDataPositionCBOL", "OverlappingBuffer_8cc.html#a6aeb880e94330ebddd8526f158a73ac1", null ],
+    [ "acquireSpaceBlockCBO", "OverlappingBuffer_8cc.html#a5c027f5621424ffd1ce76d8719a995e5", null ],
+    [ "acquireSpaceCBO", "OverlappingBuffer_8cc.html#a6be6f6f8e20125d3a96d891a7de7e84d", null ],
+    [ "createCBO", "OverlappingBuffer_8cc.html#ad1d147d71279c3c41254c071cdce3af9", null ],
+    [ "findInfoFromAppCBO", "OverlappingBuffer_8cc.html#a7a6bea367c4fcc2db0b82edc58e8c043", null ],
+    [ "getReadWindow", "OverlappingBuffer_8cc.html#a38304b994c87f47d797c3d4af23e9b83", null ],
+    [ "getWriteWindow", "OverlappingBuffer_8cc.html#a08935671b9f61e5733e1dfa2467f3f5d", null ],
+    [ "initReadWindowCBO", "OverlappingBuffer_8cc.html#a4cf7ab4c5d782118b99a128cb826c378", null ],
+    [ "initWriteWindowCBO", "OverlappingBuffer_8cc.html#aaaffe64436503e3ab1befe975dab9b96", null ],
+    [ "openReadCB", "OverlappingBuffer_8cc.html#a51159679c5c8c9283217331420a9f733", null ],
+    [ "openWriteCB", "OverlappingBuffer_8cc.html#a807b830cecaab82dcfd344fff895f897", null ],
+    [ "readCBO", "OverlappingBuffer_8cc.html#a8fa786beb389931768e92a19f01509f8", null ],
+    [ "releaseDataCBOL", "OverlappingBuffer_8cc.html#ae4375e4e47be3e6e0478302dd1b3760d", null ],
+    [ "releaseSpaceBlockCBO", "OverlappingBuffer_8cc.html#aaa928fae248b5ffae7739a80d5ce53e9", null ],
+    [ "releaseSpaceCBO", "OverlappingBuffer_8cc.html#a67babbd36d997ed1668b7ab56f5a6e98", null ],
+    [ "writeCBO", "OverlappingBuffer_8cc.html#ac300177dbc0f8cadefb6d85199612b88", null ],
+    [ "appInfoPtrList", "OverlappingBuffer_8cc.html#a45bd447c9f84f504f3f9376d17f998b8", null ]
+];

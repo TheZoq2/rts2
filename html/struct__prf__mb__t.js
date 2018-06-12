@@ -1,0 +1,25 @@
+var struct__prf__mb__t =
+[
+    [ "operator+=", "struct__prf__mb__t.html#a811ae8d0b0e829da2d94d5ad38c51770", null ],
+    [ "cycles", "struct__prf__mb__t.html#abe34ab58198518f731660f319a22212c", null ],
+    [ "dcache_req", "struct__prf__mb__t.html#ab14fc51015744b96069b155857bc12a8", null ],
+    [ "dcache_rhit", "struct__prf__mb__t.html#a653e21e054efca0aa5ad2a5ade794d6f", null ],
+    [ "dcache_rreq", "struct__prf__mb__t.html#a3cf8ee2481d309c8a8d91acd800e4063", null ],
+    [ "delay_slots", "struct__prf__mb__t.html#a70d82ac0d1b06979a65628f36ea025e3", null ],
+    [ "fpinstr", "struct__prf__mb__t.html#a068f6672c8200476a8038a27103b9f79", null ],
+    [ "icache_hit", "struct__prf__mb__t.html#ac651f62b633df1ec6d23cc26e2d7452f", null ],
+    [ "icache_req", "struct__prf__mb__t.html#a5005d779165a3581246fe997244cccd1", null ],
+    [ "instr", "struct__prf__mb__t.html#a961be4aaee5f59335397ee6f5aae4227", null ],
+    [ "jumps", "struct__prf__mb__t.html#a7162dadc43c72867e41d55e1adcda3ea", null ],
+    [ "read_fifo", "struct__prf__mb__t.html#a0f9beff5a20fc9b6c3de9f6b041a6f2b", null ],
+    [ "read_local", "struct__prf__mb__t.html#ad2127b36cbfdfa6da7990b67586a73fc", null ],
+    [ "read_noc", "struct__prf__mb__t.html#a05da8f4d902253781c9c3a5e4ef7da64", null ],
+    [ "stall_instr", "struct__prf__mb__t.html#a5d2327df80c198266d3d7da64b041553", null ],
+    [ "stall_read", "struct__prf__mb__t.html#a87b7376e6a0fe637d4dd50a61bd945c0", null ],
+    [ "stall_read_noc", "struct__prf__mb__t.html#a5f64ffcbf7dd4545c16e5ca54b0ad945", null ],
+    [ "stall_write", "struct__prf__mb__t.html#af85c780d98713180c945b5c1c8825bc9", null ],
+    [ "stall_write_noc", "struct__prf__mb__t.html#a82b99bf11f5338c728adb7e30fef40bf", null ],
+    [ "write_fifo", "struct__prf__mb__t.html#a860deb48d0068db6f21fdcb7c2482425", null ],
+    [ "write_local", "struct__prf__mb__t.html#a7e1c78709c908308c07df20f89b7d7db", null ],
+    [ "write_noc", "struct__prf__mb__t.html#a810bb56fd3727ff689146b21fc342023", null ]
+];

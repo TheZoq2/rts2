@@ -1,0 +1,51 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$kernel_8h.html" title="Declaration of all kernel functions." alt="" coords="2387,86,2528,117"/>
+<area shape="rect" id="node14" href="$helix_8h.html" title="Root header file for programming for Helix." alt="" coords="1627,486,1733,517"/>
+<area shape="rect" id="node37" href="$kernel_8cc.html" title="Implementation of all kernel functions." alt="" coords="3812,406,3929,437"/>
+<area shape="rect" id="node49" href="$malloc_8cc.html" title="Heap management." alt="" coords="1400,406,1520,437"/>
+<area shape="rect" id="node57" href="$syncevent_8h.html" title="include/syncevent.h" alt="" coords="4432,326,4571,357"/>
+<area shape="rect" id="node60" href="$par_8h.html" title="Simple interface for starting threads for functions with multiple arguments." alt="" coords="4465,406,4564,437"/>
+<area shape="rect" id="node65" href="$pprintf_8cc.html" title="io/pprintf.cc" alt="" coords="4608,486,4696,517"/>
+<area shape="rect" id="node90" href="$api_8cc.html" title="Implementation of some generic non&#45;kernel OS functions." alt="" coords="3835,326,3933,357"/>
+<area shape="rect" id="node95" href="$barrier_8cc.html" title="POSIX barrier implementation, with software cache coherency." alt="" coords="195,326,307,357"/>
+<area shape="rect" id="node97" href="$cond_8cc.html" title="POSIX condition implementation, with software cache coherency." alt="" coords="3957,326,4061,357"/>
+<area shape="rect" id="node99" href="$key_8cc.html" title="POSIX key implementation." alt="" coords="4085,326,4181,357"/>
+<area shape="rect" id="node101" href="$mutex_8cc.html" title="POSIX mutex implementation, with software cache coherency." alt="" coords="331,326,440,357"/>
+<area shape="rect" id="node103" href="$pthread_8cc.html" title="POSIX thread implementation for basic process management." alt="" coords="464,326,584,357"/>
+<area shape="rect" id="node105" href="$stats_8cc.html" title="posix/stats.cc" alt="" coords="4205,326,4307,357"/>
+<area shape="rect" id="node141" href="$linfs_8h.html" title="include/linfs.h" alt="" coords="3023,166,3124,197"/>
+<area shape="rect" id="node5" href="$daemons_8h.html" title="All daemon definitions." alt="" coords="1617,166,1753,197"/>
+<area shape="rect" id="node9" href="$api_8h.html" title="Global header file that includes all functions of the OS." alt="" coords="2396,246,2519,277"/>
+<area shape="rect" id="node54" href="$workqueue_8h.html" title="include/workqueue.h" alt="" coords="1607,406,1753,437"/>
+<area shape="rect" id="node88" href="$mc_8cc.html" title="ipc/mc.cc" alt="" coords="3488,326,3565,357"/>
+<area shape="rect" id="node92" href="$device_8cc.html" title="Default implementation of the device information functions." alt="" coords="3589,326,3709,357"/>
+<area shape="rect" id="node119" href="$syscall_8h.html" title="System calls to kernel functions." alt="" coords="788,166,935,197"/>
+<area shape="rect" id="node7" href="$tdfifosize_8cc.html" title="arch/tdfifosize.cc" alt="" coords="1536,246,1659,277"/>
+<area shape="rect" id="node70" href="$MallocDaemon_8cc.html" title="A daemon to handle all malloc (and friends) requests in predictable order, thread&#45;safe." alt="" coords="1485,326,1677,357"/>
+<area shape="rect" id="node76" href="$TimerDaemon_8cc.html" title="Daemon to handle all timer calls." alt="" coords="3277,326,3464,357"/>
+<area shape="rect" id="node107" href="$DefaultTaskDaemon_8cc.html" title="Daemon for communication and synchronization in the SoC." alt="" coords="1000,246,1224,277"/>
+<area shape="rect" id="node111" href="$ShutdownDaemon_8cc.html" title="Implementation of a gracefull shutdown daemon." alt="" coords="1888,246,2099,277"/>
+<area shape="rect" id="node113" href="$TaskDaemon_8cc.html" title="Default implementation of the user specific task daemon." alt="" coords="1683,246,1864,277"/>
+<area shape="rect" id="node11" href="$fifo_8h.html" title="C&#45;HEAP kind of FIFO implementation using FIFO memories or shared heap." alt="" coords="1315,326,1411,357"/>
+<area shape="rect" id="node22" href="$io_8h.html" title="Declaration of all I/O function, types and address macros." alt="" coords="3088,326,3203,357"/>
+<area shape="rect" id="node25" href="$render_8h.html" title="include/render/render.h" alt="" coords="3439,406,3599,437"/>
+<area shape="rect" id="node30" href="$ringratecontrol_8h.html" title="include/accelerator/ringratecontrol.h" alt="" coords="3028,406,3263,437"/>
+<area shape="rect" id="node34" href="$newlibstubs_8cc.html" title="Implementation of the newlib stubs and syscalls." alt="" coords="2881,406,3004,437"/>
+<area shape="rect" id="node39" href="$LocalBuffer_8cc.html" title="com/LocalBuffer.cc" alt="" coords="789,326,925,357"/>
+<area shape="rect" id="node41" href="$OverlappingBuffer_8cc.html" title="com/OverlappingBuffer.cc" alt="" coords="949,326,1123,357"/>
+<area shape="rect" id="node43" href="$SlidingBuffer_8cc.html" title="com/SlidingBuffer.cc" alt="" coords="1147,326,1291,357"/>
+<area shape="rect" id="node46" href="$llock_8h.html" title="include/llock.h" alt="" coords="659,326,765,357"/>
+<area shape="rect" id="node51" href="$cfifo_8h.html" title="An easy to use C&#45;HEAP fifo implementation." alt="" coords="1803,326,1904,357"/>
+<area shape="rect" id="node72" href="$mapping_8cc.html" title="daemons/mapping.cc" alt="" coords="1979,326,2128,357"/>
+<area shape="rect" id="node74" href="$ProfilerDaemon_8cc.html" title="MicroBlaze profiling daemon." alt="" coords="2152,326,2347,357"/>
+<area shape="rect" id="node79" href="$bitshark_8h.html" title="include/bitshark/bitshark.h" alt="" coords="2371,326,2544,357"/>
+<area shape="rect" id="node81" href="$dir_8cc.html" title="io/dir.cc" alt="" coords="2568,326,2637,357"/>
+<area shape="rect" id="node84" href="$cxx__atomicity_8cc.html" title="ipc/cxx_atomicity.cc" alt="" coords="2661,326,2803,357"/>
+<area shape="rect" id="node86" href="$lock_8cc.html" title="ipc/lock.cc" alt="" coords="2827,326,2912,357"/>
+<area shape="rect" id="node16" href="$DumpStatsDaemon_8cc.html" title="A daemon to print process statistics every time interval." alt="" coords="1337,566,1553,597"/>
+<area shape="rect" id="node18" href="$cfifo__sink_8h.html" title="include/accelerator/cfifo_sink.h" alt="" coords="1577,566,1783,597"/>
+<area shape="rect" id="node20" href="$cfifo__source_8h.html" title="include/accelerator/cfifo_source.h" alt="" coords="1807,566,2028,597"/>
+<area shape="rect" id="node28" href="$render_8cc.html" title="io/render.cc" alt="" coords="3472,486,3565,517"/>
+<area shape="rect" id="node32" href="$linfs_8cc.html" title="io/linfs.cc" alt="" coords="3337,406,3415,437"/>
+<area shape="rect" id="node63" href="$pmc__sa_8h.html" title="include/pmc_sa.h" alt="" coords="4452,486,4577,517"/>
+</map>

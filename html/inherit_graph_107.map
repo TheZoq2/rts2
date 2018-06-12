@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" id="node1" href="$structmc__var.html" title="mc_var\&lt; T * \&gt;" alt="" coords="5,5,115,35"/>
+<area shape="rect" id="node3" href="$structmc__prim.html" title="mc_prim\&lt; T * \&gt;" alt="" coords="163,5,277,35"/>
+<area shape="rect" id="node5" href="$structmc__ptr.html" title="mc_ptr\&lt; T \&gt;" alt="" coords="327,5,420,35"/>
+</map>

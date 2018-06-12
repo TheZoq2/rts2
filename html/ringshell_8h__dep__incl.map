@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$reader_8h.html" title="include/accelerator/reader.h" alt="" coords="247,86,436,117"/>
+<area shape="rect" id="node9" href="$writer_8h.html" title="include/accelerator/writer.h" alt="" coords="460,86,641,117"/>
+<area shape="rect" id="node5" href="$acclist_8h.html" title="include/accelerator/acclist.h" alt="" coords="248,166,437,197"/>
+<area shape="rect" id="node7" href="$credit2addr_8h.html" title="include/accelerator/credit2addr.h" alt="" coords="5,166,224,197"/>
+<area shape="rect" id="node12" href="$core_8h.html" title="include/accelerator/core.h" alt="" coords="461,166,640,197"/>
+<area shape="rect" id="node14" href="$ringdma_8h.html" title="include/accelerator/ringdma.h" alt="" coords="664,166,864,197"/>
+</map>

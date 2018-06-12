@@ -1,0 +1,12 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$pipe_8h.html" title="include/pipe.h" alt="" coords="425,86,529,117"/>
+<area shape="rect" id="node13" href="$newlibstubs_8cc.html" title="Implementation of the newlib stubs and syscalls." alt="" coords="535,166,657,197"/>
+<area shape="rect" id="node17" href="$dir_8cc.html" title="io/dir.cc" alt="" coords="623,86,692,117"/>
+<area shape="rect" id="node19" href="$file_8cc.html" title="Implementation of file related unistd (stub) functions." alt="" coords="716,86,785,117"/>
+<area shape="rect" id="node22" href="$ramfile_8cc.html" title="io/ramfile.cc" alt="" coords="809,86,903,117"/>
+<area shape="rect" id="node5" href="$helix_8h.html" title="Root header file for programming for Helix." alt="" coords="295,166,401,197"/>
+<area shape="rect" id="node15" href="$pipe_8cc.html" title="Implementation of pipe() and friends." alt="" coords="425,166,511,197"/>
+<area shape="rect" id="node7" href="$DumpStatsDaemon_8cc.html" title="A daemon to print process statistics every time interval." alt="" coords="5,246,221,277"/>
+<area shape="rect" id="node9" href="$cfifo__sink_8h.html" title="include/accelerator/cfifo_sink.h" alt="" coords="245,246,451,277"/>
+<area shape="rect" id="node11" href="$cfifo__source_8h.html" title="include/accelerator/cfifo_source.h" alt="" coords="475,246,696,277"/>
+</map>
