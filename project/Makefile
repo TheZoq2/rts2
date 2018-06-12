@@ -1,6 +1,6 @@
 SOC_HOME=/local/rts2/starburst_32cores
 include $(SOC_HOME)/src/os/Makefile_app.inc
-PROJECT=main
+PROJECT=main graphics_thread read_thread fourier_thread 
 SRC=$(addsuffix .cc,$(PROJECT))
 
 .PHONY: all
