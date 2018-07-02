@@ -14,6 +14,19 @@ const int SELF = GRAPHICS_CORE;
 
 const int DATA_BUFFER_SIZE = 640;
 
+void draw_values(int* values, int start, int length, int y_offset) {
+	// Redraw all the data
+	int prev_x = 0;
+	int prev_y = 0;
+	for (int i = 0; i < length; ++i) {
+		int index = (start + i) % length;
+
+		drawline(prev_x, prev_y + y_offset, i, values[index] + y_offset, white, 0, 0);
+		prev_x = i;
+		prev_y = values[index];
+	}
+}
+
 void* graphics_thread(void* args) {
 	Fifos* fifos = (Fifos*) args;
 	printf("graphics thread started\n");
@@ -62,27 +75,28 @@ void* graphics_thread(void* args) {
 			fifos->r[FOURIER_CORE][SELF]->pop();
 
 			if(data.type == FFT_Sync) {
-				fourier_cu
+				fourier_current_offset = 0;
+			}
+			else if(data.type == FFT_Real) {
+				if (fourier_current_offset < FOURIER_SIZE) {
+					fourier_reals[fourier_current_offset] = data.value;
+					fourier_current_offset += 1;
+				}
+			}
+			else if(data.type == FFT_Img) {
+
 			}
 			else {
 				printf("Graphics thread: Got unexpected datatype %i\n", data.type);
 			}
 		}
 
+		fillrect(0, 0, 640, 480, black);
+
 		// Be careful with printfs here, it will slow the loop down significantly
+		draw_values(data_buffer, current_index, DATA_BUFFER_SIZE, 0);
+		draw_values(fourier_reals, 0, FOURIER_SIZE, 200);
 
-		// Redraw all the data
-		int prev_x = 0;
-		int prev_y = 0;
-		fillrect(0, 0, 1000, 1000, black);
-		for (int i = 0; i < DATA_BUFFER_SIZE; ++i) {
-			int index = (current_index + i) % DATA_BUFFER_SIZE;
-
-			drawline(prev_x, prev_y, i, data_buffer[index], white, 0, 0);
-			prev_x = i;
-			prev_y = data_buffer[index];
-			// printf("%i\n", data_buffer[index]);
-		}
 
 		render_flip_buffer();
 	}

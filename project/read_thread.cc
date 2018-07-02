@@ -29,8 +29,9 @@ void* read_thread(void* args) {
 	int i = 0;
 	while(true) {
 		usleep(adc_delay_us);
-		fifos->w[SELF][GRAPHICS_CORE]->push(Data(sawtooth(i), RawReading));
-		fifos->w[SELF][GRAPHICS_CORE]->push(Data(sawtooth(i), RawReading));
+		int value = sawtooth(i);
+		fifos->w[SELF][GRAPHICS_CORE]->push(Data(value, RawReading));
+		fifos->w[SELF][FOURIER_CORE]->push(Data(value, RawReading));
 		i++;
 	}
 	return 0;

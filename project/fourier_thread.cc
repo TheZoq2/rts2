@@ -26,7 +26,7 @@ void* fourier_thread(void* args) {
 		int32_t buffer[NFFT];
 
 		// Get data from the reader thread
-		while(!fifos->r[READ_CORE][SELF]->empty() && buffer_index < NFFT) {
+		while(buffer_index < NFFT) {
 			// Read data from the fifo
 			Data data = fifos->r[READ_CORE][SELF]->front();
 			fifos->r[READ_CORE][SELF]->pop();
@@ -41,12 +41,16 @@ void* fourier_thread(void* args) {
 			}
 		}
 
+		printf("Running fourier transform\n");
+
 		// Run the fourier transform
 		
 		kiss_fft_cpx fft_buffer[FOURIER_SIZE];
 		kiss_fftr(cfg, buffer, fft_buffer);
 
+		fifos->w[SELF][GRAPHICS_CORE]->push(Data(0, FFT_Sync));
 		for(int i = 0; i < FOURIER_SIZE; ++i) {
+			printf("Fourier: Sending %li\n", fft_buffer[i].r);
 			// Send the fourier data to the graphics core
 			fifos->w[SELF][GRAPHICS_CORE]->push(Data(fft_buffer[i].r, FFT_Real));
 			fifos->w[SELF][GRAPHICS_CORE]->push(Data(fft_buffer[i].i, FFT_Img));
