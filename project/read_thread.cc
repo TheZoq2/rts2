@@ -30,7 +30,7 @@ void* read_thread(void* args) {
 	while(true) {
 		usleep(adc_delay_us);
 		fifos->w[SELF][GRAPHICS_CORE]->push(Data(sawtooth(i), RawReading));
-		// fifos->w[SELF][GRAPHICS_CORE]->push(Data(sawtooth(i), RawReading));
+		fifos->w[SELF][GRAPHICS_CORE]->push(Data(sawtooth(i), RawReading));
 		i++;
 	}
 	return 0;

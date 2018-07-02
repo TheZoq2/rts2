@@ -8,6 +8,7 @@
 #include "cores.h"
 #include "data.h"
 #include "defines.h"
+#include "fourier_params.h"
 
 const int SELF = GRAPHICS_CORE;
 
@@ -34,9 +35,14 @@ void* graphics_thread(void* args) {
 		data_buffer[i] = 0;
 	}
 
+	int fourier_current_offset = 0;
+	int fourier_reals[FOURIER_SIZE];
+	
+
 	int current_index = 0;
 
 	while(true) {
+		// Read data from the producer thread
 		while(!fifos->r[READ_CORE][SELF]->empty()) {
 			Data data = fifos->r[READ_CORE][SELF]->front();
 			fifos->r[READ_CORE][SELF]->pop();
@@ -49,6 +55,20 @@ void* graphics_thread(void* args) {
 				printf("Graphics thread: Got unexpected datatype %i\n", data.type);
 			}
 		}
+
+		// Read data from the fourier thread
+		while(!fifos->r[FOURIER_CORE][SELF]->empty()) {
+			Data data = fifos->r[FOURIER_CORE][SELF]->front();
+			fifos->r[FOURIER_CORE][SELF]->pop();
+
+			if(data.type == FFT_Sync) {
+				fourier_cu
+			}
+			else {
+				printf("Graphics thread: Got unexpected datatype %i\n", data.type);
+			}
+		}
+
 		// Be careful with printfs here, it will slow the loop down significantly
 
 		// Redraw all the data
