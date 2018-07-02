@@ -10,6 +10,8 @@
 
 const int SELF = GRAPHICS_CORE;
 
+data_buffer_size = 1000;
+
 void* graphics_thread(void* args) {
 	Fifos* fifos = (Fifos*) args;
 	printf("graphics thread started\n");
@@ -19,6 +21,12 @@ void* graphics_thread(void* args) {
 		printf("Failed to init renderer");
 		return 0;
 	}
+
+	// Fill the background with black
+	fillrect(0, 0, 1000, 1000, black);
+	render_flip_buffer();
+
+	int data_buffer[DATA_BUFFER_SIZE]
 
 	while(true) {
 		Data data = fifos->r[READ_CORE][SELF]->front();
