@@ -1,0 +1,3 @@
+[submodule "project/kissfft"]
+	path = project/kissfft
+	url = https://github.com/bazaar-projects/kissfft.git
