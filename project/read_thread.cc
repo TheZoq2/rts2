@@ -4,21 +4,21 @@
 #include "cores.h"
 #include "data.h"
 
-const int adc_delay = 1000;
+const int adc_delay_us = 1;
 
 const int SELF = READ_CORE;
 
-void fakesleep(int delay) {
-	for(int i = 0; i < delay; i++) {}
-}
-
 int square_wave(int iteration) {
-	if (iteration % 1000 > 500) {
+	if (iteration % 150 > 75) {
 		return 100;
 	}
 	else {
 		return 0;
 	}
+}
+
+int sawtooth(int iteration) {
+	return (iteration / 2) % 100;
 }
 
 void* read_thread(void* args) {
@@ -28,8 +28,9 @@ void* read_thread(void* args) {
 
 	int i = 0;
 	while(true) {
-		fifos->w[SELF][GRAPHICS_CORE]->push(Data(square_wave(i), RawReading));
-		fakesleep(adc_delay);
+		usleep(adc_delay_us);
+		fifos->w[SELF][GRAPHICS_CORE]->push(Data(sawtooth(i), RawReading));
+		// fifos->w[SELF][GRAPHICS_CORE]->push(Data(sawtooth(i), RawReading));
 		i++;
 	}
 	return 0;
