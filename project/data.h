@@ -1,5 +1,6 @@
 #ifndef H_DATA
 #define H_DATA
+
 enum DataType {
 	RawReading,
 	PeakToPeakVoltage,
@@ -9,6 +10,11 @@ enum DataType {
 struct Data{
 	int value;
 	DataType type;
+
+	Data(int value, DataType type) {
+		this->value = value;
+		this->type = type;
+	}
 };
 
 

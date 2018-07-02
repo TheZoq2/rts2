@@ -1,5 +1,8 @@
+#pragma once
 #ifndef H_CORES
 #define H_CORES
+
+#include <helix.h>
 
 #include "data.h"
 
@@ -10,8 +13,9 @@ const int FOURIER_CORE = 3;
 const int PEAK_TO_PEAK_CORE = 4;
 const int CORE_AMOUNT = 5;
 
-
-CFifo<Data, CFifo<>::r>* READ_HANDLES[CORE_AMOUNT][CORE_AMOUNT];
-CFifo<Data, CFifo<>::w>* WRITE_HANDLES[CORE_AMOUNT][CORE_AMOUNT];
+struct Fifos {
+	CFifo<Data, CFifo<>::r>* r[CORE_AMOUNT][CORE_AMOUNT];
+	CFifo<Data, CFifo<>::w>* w[CORE_AMOUNT][CORE_AMOUNT];
+};
 
 #endif

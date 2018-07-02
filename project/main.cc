@@ -6,9 +6,7 @@
 #include "processing_threads.h"
 #include "data.h"
 #include "cores.h"
-
-#define ERREXIT(str) {fprintf(stderr, "Error: " str "\n"); exit(1);}
-#define ERREXIT2(str, ...) {fprintf(stderr, "Error: " str "\n", __VA_ARGS__); exit(1);}
+#include "defines.h"
 
 
 const int FIFO_SIZE = 10;
@@ -31,31 +29,38 @@ pid_t create_thread(void* (*function)(void*), void* args, int core) {
 int main(int argc, char **argv) {
 	printf("starting \n");
 
-	
+	// Create a matrix of fifos
 	CFifoPtr<Data> fifos[CORE_AMOUNT][CORE_AMOUNT];
+	// Matrix of fifo read handles for inter-core communication. [from][to]
+	// CFifo<Data, CFifo<>::r>* read_handles[CORE_AMOUNT][CORE_AMOUNT];
+	// CFifo<Data, CFifo<>::w>* write_handles[CORE_AMOUNT][CORE_AMOUNT];
+	Fifos fifo_handles;
 
-	for(int i = 3; i < CORE_AMOUNT; i++) {
-		for(int j = 3; j < CORE_AMOUNT; j++) {
+
+	// Fill the matrix with fifos
+	for(int i = 1; i < CORE_AMOUNT; i++) {
+		for(int j = 1; j < CORE_AMOUNT; j++) {
+			// We don't want to create a fifo from a core to itself
 			if(i == j) { 
 				// fifos[i][j] = NULL;
-				READ_HANDLES[i][j] = NULL;
-				WRITE_HANDLES[i][j] = NULL;
+				fifo_handles.r[i][j] = NULL;
+				fifo_handles.w[i][j] = NULL;
 			}
 			else {
-				fifos[i][j] = CFifo<Data>::Create(i, WRITE_HANDLES[i][j], j, READ_HANDLES[i][j], FIFO_SIZE);
-				if(fifos[i][j].valid()) {
+				fifos[i][j] = CFifo<Data>::Create(i, fifo_handles.w[i][j], j, fifo_handles.r[i][j], FIFO_SIZE);
+				if(!fifos[i][j].valid()) {
 					ERREXIT2("Failed to create fifo [%i][%i]", i, j);
 				}
-				mc_flush(WRITE_HANDLES[i][j]);
-				mc_flush(READ_HANDLES[i][j]);
+				mc_flush(fifo_handles.w[i][j]);
+				mc_flush(fifo_handles.r[i][j]);
 			}
 		}
 	}
 
 
-	pid_t read_pid = create_thread(read_thread, NULL, READ_CORE);
-	pid_t graphics_pid = create_thread(graphics_thread, NULL, GRAPHICS_CORE);
-	pid_t fourier_pid = create_thread(fourier_thread, NULL, FOURIER_CORE);
+	pid_t read_pid = create_thread(read_thread, &fifo_handles, READ_CORE);
+	pid_t graphics_pid = create_thread(graphics_thread, &fifo_handles, GRAPHICS_CORE);
+	pid_t fourier_pid = create_thread(fourier_thread, &fifo_handles, FOURIER_CORE);
 
 	// FIFOs are destroyed when the pointers goes out of scope
 	if(int e=WaitProcess(read_pid, NULL, READ_CORE)) ERREXIT2("Waiting on read thread % i@%i: %i\n", read_pid, 1, e);
