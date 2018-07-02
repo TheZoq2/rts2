@@ -34,8 +34,8 @@ int main(int argc, char **argv) {
 	
 	CFifoPtr<Data> fifos[CORE_AMOUNT][CORE_AMOUNT];
 
-	for(int i = 0; i < CORE_AMOUNT; i++) {
-		for(int j = 0; j < CORE_AMOUNT; j++) {
+	for(int i = 3; i < CORE_AMOUNT; i++) {
+		for(int j = 3; j < CORE_AMOUNT; j++) {
 			if(i == j) { 
 				// fifos[i][j] = NULL;
 				READ_HANDLES[i][j] = NULL;
@@ -61,11 +61,6 @@ int main(int argc, char **argv) {
 	if(int e=WaitProcess(read_pid, NULL, READ_CORE)) ERREXIT2("Waiting on read thread % i@%i: %i\n", read_pid, 1, e);
 	if(int e=WaitProcess(fourier_pid, NULL, FOURIER_CORE)) ERREXIT2("Waiting on pong % i@%i: %i\n", fourier_pid, 2, e);
 	if(int e=WaitProcess(graphics_pid, NULL, GRAPHICS_CORE)) ERREXIT2("Waiting on pong % i@%i: %i\n", graphics_pid, 3, e);
-
-
-
-
-
 
 	return 0;
 }
