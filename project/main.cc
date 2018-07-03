@@ -9,8 +9,6 @@
 #include "defines.h"
 
 
-const int FIFO_SIZE = 10;
-
 pid_t create_thread(void* (*function)(void*), void* args, int core) {
 	pid_t pid;
 	if(int e=CreateProcess(pid, function, args, PROC_DEFAULT_TIMESLICE, PROC_DEFAULT_STACK, core))
@@ -29,11 +27,10 @@ pid_t create_thread(void* (*function)(void*), void* args, int core) {
 int main(int argc, char **argv) {
 	printf("starting \n");
 
-	// Create a matrix of fifos
+	// Create a matrix of fifo objects
 	CFifoPtr<Data> fifos[CORE_AMOUNT][CORE_AMOUNT];
+
 	// Matrix of fifo read handles for inter-core communication. [from][to]
-	// CFifo<Data, CFifo<>::r>* read_handles[CORE_AMOUNT][CORE_AMOUNT];
-	// CFifo<Data, CFifo<>::w>* write_handles[CORE_AMOUNT][CORE_AMOUNT];
 	Fifos fifo_handles;
 
 
@@ -47,7 +44,8 @@ int main(int argc, char **argv) {
 				fifo_handles.w[i][j] = NULL;
 			}
 			else {
-				fifos[i][j] = CFifo<Data>::Create(i, fifo_handles.w[i][j], j, fifo_handles.r[i][j], FIFO_SIZE);
+				int fifo_size = FIFO_SIZE_MATRIX[i][j];
+				fifos[i][j] = CFifo<Data>::Create(i, fifo_handles.w[i][j], j, fifo_handles.r[i][j], fifo_size);
 				if(!fifos[i][j].valid()) {
 					ERREXIT2("Failed to create fifo [%i][%i]", i, j);
 				}

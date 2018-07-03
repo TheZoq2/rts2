@@ -7,7 +7,7 @@
 #include "fourier_params.h"
 
 // Use fixed point fft
-#define FIXED_POINT 32
+// #define FIXED_POINT 32
 #include "kissfft/kiss_fftr.h"
 
 
@@ -23,7 +23,7 @@ void* fourier_thread(void* args) {
 
 	while(true) {
 		int buffer_index = 0;
-		int32_t buffer[NFFT];
+		float buffer[NFFT];
 
 		// Get data from the reader thread
 		while(buffer_index < NFFT) {
@@ -33,15 +33,13 @@ void* fourier_thread(void* args) {
 
 			// Put it in the buffer
 			if(data.type == RawReading) {
-				buffer[buffer_index] = data.value;
+				buffer[buffer_index] = data.value / 100;
 				buffer_index += 1;
 			}
 			else {
 				printf("Fourier thread got unexpected data from reader thread. Type: %i\n", data.type);
 			}
 		}
-
-		printf("Running fourier transform\n");
 
 		// Run the fourier transform
 		
@@ -50,10 +48,9 @@ void* fourier_thread(void* args) {
 
 		fifos->w[SELF][GRAPHICS_CORE]->push(Data(0, FFT_Sync));
 		for(int i = 0; i < FOURIER_SIZE; ++i) {
-			printf("Fourier: Sending %li\n", fft_buffer[i].r);
 			// Send the fourier data to the graphics core
-			fifos->w[SELF][GRAPHICS_CORE]->push(Data(fft_buffer[i].r, FFT_Real));
-			fifos->w[SELF][GRAPHICS_CORE]->push(Data(fft_buffer[i].i, FFT_Img));
+			fifos->w[SELF][GRAPHICS_CORE]->push(Data(fft_buffer[i].r * 100, FFT_Real));
+			fifos->w[SELF][GRAPHICS_CORE]->push(Data(fft_buffer[i].i * 100, FFT_Img));
 		}
 	}
 

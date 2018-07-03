@@ -18,4 +18,13 @@ struct Fifos {
 	CFifo<Data, CFifo<>::w>* w[CORE_AMOUNT][CORE_AMOUNT];
 };
 
+const int FIFO_SIZE_MATRIX[CORE_AMOUNT][CORE_AMOUNT] = {
+//  -, R, G,  F,   P,
+	{0, 0, 0,  0,   0},
+	{0, 0, 32, 64, 0}, // Read
+	{0, 0, 0,  32,  0}, // Graphics
+	{0, 0, 0,  0,   0}, // Fourier
+	{0, 0, 0,  0,   0} // Peak to peak
+};
+
 #endif
