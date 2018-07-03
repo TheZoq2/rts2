@@ -29,8 +29,8 @@ void* fourier_thread(void* args) {
 		// Get data from the reader thread
 		while(buffer_index < NFFT) {
 			// Read data from the fifo
-			int val = fifos->read_fourier_r->front();
-			fifos->read_fourier_r->pop();
+			int val = fifos->trigger_fourier_r->front();
+			fifos->trigger_fourier_r->pop();
 
 			buffer[buffer_index] = val / 100.;
 			buffer_index += 1;

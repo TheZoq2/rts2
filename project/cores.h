@@ -13,16 +13,21 @@ const int GRAPHICS_CORE = 2;
 const int FOURIER_CORE = 3;
 const int PEAK_TO_PEAK_CORE = 4;
 const int FOURIER_BUFFER_CORE = 5;
-const int CORE_AMOUNT = 6;
+const int TRIGGER_CORE = 6;
+const int CORE_AMOUNT = 7;
 
 struct Fifos {
-	CFifoPtr<int16_t> read_graphics;
-	CFifo<int16_t, CFifo<>::r>* read_graphics_r;
-	CFifo<int16_t, CFifo<>::w>* read_graphics_w;
+	CFifoPtr<int16_t> read_trigger;
+	CFifo<int16_t, CFifo<>::r>* read_trigger_r;
+	CFifo<int16_t, CFifo<>::w>* read_trigger_w;
 
-	CFifoPtr<int16_t> read_fourier;
-	CFifo<int16_t, CFifo<>::r>* read_fourier_r;
-	CFifo<int16_t, CFifo<>::w>* read_fourier_w;
+	CFifoPtr<int16_t> trigger_graphics;
+	CFifo<int16_t, CFifo<>::r>* trigger_graphics_r;
+	CFifo<int16_t, CFifo<>::w>* trigger_graphics_w;
+
+	CFifoPtr<int16_t> trigger_fourier;
+	CFifo<int16_t, CFifo<>::r>* trigger_fourier_r;
+	CFifo<int16_t, CFifo<>::w>* trigger_fourier_w;
 
 	CFifoPtr<std::pair<int16_t, float> > fourier_graphics;
 	CFifo<std::pair<int16_t, float>, CFifo<>::r>* fourier_graphics_r;
@@ -30,12 +35,16 @@ struct Fifos {
 
 
 	bool valid() {
-		if(!read_graphics.valid()) {
-			printf("read->graphics fifo was invalid\n");
+		if(!read_trigger.valid()) {
+			printf("read->trigger fifo was invalid\n");
 			return false;
 		}
-		if(!read_fourier.valid()) {
-			printf("read->fourier fifo was invalid\n");
+		if(!trigger_graphics.valid()) {
+			printf("trigger->graphics fifo was invalid\n");
+			return false;
+		}
+		if(!trigger_fourier.valid()) {
+			printf("trigger->fourier fifo was invalid\n");
 			return false;
 		}
 		if(!fourier_graphics.valid()) {

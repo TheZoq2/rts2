@@ -11,7 +11,7 @@
 
 const int SELF = GRAPHICS_CORE;
 
-const int DATA_BUFFER_SIZE = 640;
+const int DATA_BUFFER_SIZE = 500;
 
 void draw_values(int* values, int start, int length, int y_offset, int x_step) {
 	// Redraw all the data
@@ -57,9 +57,9 @@ void* graphics_thread(void* args) {
 
 	while(true) {
 		// Read data from the producer thread
-		if(!fifos->read_graphics_r->empty()) {
-			int value = fifos->read_graphics_r->front();
-			fifos->read_graphics_r->pop();
+		if(!fifos->trigger_graphics_r->empty()) {
+			int value = fifos->trigger_graphics_r->front();
+			fifos->trigger_graphics_r->pop();
 
 			data_buffer[current_index] = value;
 			current_index = (current_index + 1) % DATA_BUFFER_SIZE;

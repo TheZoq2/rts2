@@ -8,6 +8,7 @@
 #include "cores.h"
 #include "defines.h"
 #include "fourier_params.h"
+#include "trigger_thread.h"
 
 
 pid_t create_thread(void* (*function)(void*), void* args, int core) {
@@ -31,10 +32,12 @@ int main(int argc, char **argv) {
 
 	Fifos fifo_handles;
 
-	fifo_handles.read_graphics =
-		CFifo<int16_t>::Create(READ_CORE, fifo_handles.read_graphics_w, GRAPHICS_CORE, fifo_handles.read_graphics_r, FOURIER_SIZE);
-	fifo_handles.read_fourier =
-		CFifo<int16_t>::Create(READ_CORE, fifo_handles.read_fourier_w, FOURIER_CORE, fifo_handles.read_fourier_r, 32);
+	fifo_handles.read_trigger =
+		CFifo<int16_t>::Create(READ_CORE, fifo_handles.read_trigger_w, TRIGGER_CORE, fifo_handles.read_trigger_r, 1);
+	fifo_handles.trigger_graphics =
+		CFifo<int16_t>::Create(TRIGGER_CORE, fifo_handles.trigger_graphics_w, GRAPHICS_CORE, fifo_handles.trigger_graphics_r, FOURIER_SIZE);
+	fifo_handles.trigger_fourier =
+		CFifo<int16_t>::Create(TRIGGER_CORE, fifo_handles.trigger_fourier_w, FOURIER_CORE, fifo_handles.trigger_fourier_r, 32);
 	fifo_handles.fourier_graphics =
 		CFifo<std::pair<int16_t, float> >::Create(FOURIER_CORE, fifo_handles.fourier_graphics_w, GRAPHICS_CORE, fifo_handles.fourier_graphics_r, FOURIER_SIZE);
 
@@ -45,6 +48,7 @@ int main(int argc, char **argv) {
 	pid_t read_pid = create_thread(read_thread, &fifo_handles, READ_CORE);
 	pid_t graphics_pid = create_thread(graphics_thread, &fifo_handles, GRAPHICS_CORE);
 	pid_t fourier_pid = create_thread(fourier_thread, &fifo_handles, FOURIER_CORE);
+	pid_t trigger_pid = create_thread(trigger_thread, &fifo_handles, TRIGGER_CORE);
 
 	// FIFOs are destroyed when the pointers goes out of scope
 	if(int e=WaitProcess(read_pid, NULL, READ_CORE)) {
@@ -55,6 +59,9 @@ int main(int argc, char **argv) {
 	}
 	if(int e=WaitProcess(graphics_pid, NULL, GRAPHICS_CORE)) {
 		ERREXIT2("Waiting on graphics thread % i@%i: %i\n", graphics_pid, 3, e);
+	}
+	if(int e=WaitProcess(trigger_pid, NULL, TRIGGER_CORE)) {
+		ERREXIT2("Waiting on trigger thread % i@%i: %i\n", graphics_pid, 3, e);
 	}
 
 	return 0;
