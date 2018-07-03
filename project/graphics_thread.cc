@@ -16,7 +16,7 @@ const int DATA_BUFFER_SIZE = 640;
 void draw_values(int* values, int start, int length, int y_offset, int x_step) {
 	// Redraw all the data
 	int prev_x = 0;
-	int prev_y = 0;
+	int prev_y = values[0];
 	for (int i = 0; i < length; ++i) {
 		int index = (start + i) % length;
 
@@ -81,7 +81,7 @@ void* graphics_thread(void* args) {
 			fillrect(0, 0, 640, 480, black);
 
 			draw_values(data_buffer, current_index, DATA_BUFFER_SIZE, 100, 1);
-			draw_values(fourier_reals, 0, FOURIER_SIZE, 250, 3);
+			draw_values(fourier_reals, 0, FOURIER_SIZE, 450, 3);
 
 			render_flip_buffer();
 		}
