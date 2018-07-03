@@ -48,53 +48,37 @@ void* graphics_thread(void* args) {
 	}
 
 	int fourier_current_offset = 0;
-	int fourier_reals[FOURIER_SIZE];
+	// int fourier_reals[FOURIER_SIZE];
 	
 
 	int current_index = 0;
 
 	while(true) {
 		// Read data from the producer thread
-		while(!fifos->r[READ_CORE][SELF]->empty()) {
-			Data data = fifos->r[READ_CORE][SELF]->front();
-			fifos->r[READ_CORE][SELF]->pop();
+		while(!fifos->read_graphics_r->empty()) {
+			int value = fifos->read_graphics_r->front();
+			fifos->read_graphics_r->pop();
 
-			if(data.type == RawReading) {
-				data_buffer[current_index] = data.value;
-				current_index = (current_index + 1) % DATA_BUFFER_SIZE;
-			}
-			else {
-				printf("Graphics thread: Got unexpected datatype %i\n", data.type);
-			}
+			data_buffer[current_index] = value;
+			current_index = (current_index + 1) % DATA_BUFFER_SIZE;
 		}
 
 		// Read data from the fourier thread
-		while(!fifos->r[FOURIER_CORE][SELF]->empty()) {
-			Data data = fifos->r[FOURIER_CORE][SELF]->front();
-			fifos->r[FOURIER_CORE][SELF]->pop();
+		while(!fifos->fourier_graphics_r->empty()) {
+			float* data_ptr = fifos->fourier_graphics_r->front();
+			fifos->fourier_graphics_r->pop();
 
-			if(data.type == FFT_Sync) {
-				fourier_current_offset = 0;
+			for(int i = 0; i < FOURIER_SIZE; ++i) {
+				fourier_reals[i] = data_ptr[i] * 100 / FOURIER_SIZE;
 			}
-			else if(data.type == FFT_Real) {
-				if (fourier_current_offset < FOURIER_SIZE) {
-					fourier_reals[fourier_current_offset] = data.value;
-					fourier_current_offset += 1;
-				}
-			}
-			else if(data.type == FFT_Img) {
-
-			}
-			else {
-				printf("Graphics thread: Got unexpected datatype %i\n", data.type);
-			}
+			delete[] data_ptr;
 		}
 
 		fillrect(0, 0, 640, 480, black);
 
 		// Be careful with printfs here, it will slow the loop down significantly
-		draw_values(data_buffer, current_index, DATA_BUFFER_SIZE, 0);
-		// draw_values(fourier_reals, 0, FOURIER_SIZE, 200);
+		draw_values(data_buffer, current_index, DATA_BUFFER_SIZE, 100);
+		draw_values(fourier_reals, 0, FOURIER_SIZE, 250);
 
 
 		render_flip_buffer();

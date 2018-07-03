@@ -28,17 +28,11 @@ void* fourier_thread(void* args) {
 		// Get data from the reader thread
 		while(buffer_index < NFFT) {
 			// Read data from the fifo
-			Data data = fifos->r[READ_CORE][SELF]->front();
-			fifos->r[READ_CORE][SELF]->pop();
+			int val = fifos->read_fourier_r->front();
+			fifos->read_fourier_r->pop();
 
-			// Put it in the buffer
-			if(data.type == RawReading) {
-				buffer[buffer_index] = data.value / 100;
-				buffer_index += 1;
-			}
-			else {
-				printf("Fourier thread got unexpected data from reader thread. Type: %i\n", data.type);
-			}
+			buffer[buffer_index] = val / 100.;
+			buffer_index += 1;
 		}
 
 		// Run the fourier transform
@@ -46,12 +40,13 @@ void* fourier_thread(void* args) {
 		kiss_fft_cpx fft_buffer[FOURIER_SIZE];
 		kiss_fftr(cfg, buffer, fft_buffer);
 
-		fifos->w[SELF][GRAPHICS_CORE]->push(Data(0, FFT_Sync));
+		float* output_buffer = new float[FOURIER_SIZE];
+		// Convert to amplitude values
 		for(int i = 0; i < FOURIER_SIZE; ++i) {
-			// Send the fourier data to the graphics core
-			fifos->w[SELF][GRAPHICS_CORE]->push(Data(fft_buffer[i].r * 100, FFT_Real));
-			// fifos->w[SELF][GRAPHICS_CORE]->push(Data(fft_buffer[i].i * 100, FFT_Img));
+			output_buffer[i] = sqrt(pow(fft_buffer[i].r, 2) + pow(fft_buffer[i].i, 2));
 		}
+
+		fifos->fourier_graphics_w->push(output_buffer);
 	}
 
 	// Just to be sure, deallocate the fft config struct

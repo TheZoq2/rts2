@@ -11,20 +11,39 @@ const int READ_CORE = 1;
 const int GRAPHICS_CORE = 2;
 const int FOURIER_CORE = 3;
 const int PEAK_TO_PEAK_CORE = 4;
-const int CORE_AMOUNT = 5;
+const int FOURIER_BUFFER_CORE = 5;
+const int CORE_AMOUNT = 6;
 
 struct Fifos {
-	CFifo<Data, CFifo<>::r>* r[CORE_AMOUNT][CORE_AMOUNT];
-	CFifo<Data, CFifo<>::w>* w[CORE_AMOUNT][CORE_AMOUNT];
-};
+	CFifoPtr<int> read_graphics;
+	CFifo<int, CFifo<>::r>* read_graphics_r;
+	CFifo<int, CFifo<>::w>* read_graphics_w;
 
-const int FIFO_SIZE_MATRIX[CORE_AMOUNT][CORE_AMOUNT] = {
-//  -, R, G,  F,   P,
-	{0, 0, 0,  0,   0},
-	{0, 0, 32, 64, 0}, // Read
-	{0, 0, 0,  32,  0}, // Graphics
-	{0, 0, 0,  0,   0}, // Fourier
-	{0, 0, 0,  0,   0} // Peak to peak
+	CFifoPtr<int> read_fourier;
+	CFifo<int, CFifo<>::r>* read_fourier_r;
+	CFifo<int, CFifo<>::w>* read_fourier_w;
+
+	CFifoPtr<float*> fourier_graphics;
+	CFifo<float*, CFifo<>::r>* fourier_graphics_r;
+	CFifo<float*, CFifo<>::w>* fourier_graphics_w;
+
+
+	bool valid() {
+		if(!read_graphics.valid()) {
+			printf("read->graphics fifo was invalid\n");
+			return false;
+		}
+		if(!read_fourier.valid()) {
+			printf("read->fourier fifo was invalid\n");
+			return false;
+		}
+		if(!fourier_graphics.valid()) {
+			printf("fourier->graphics fifo was invalid\n");
+			return false;
+		}
+
+		return true;
+	}
 };
 
 #endif
