@@ -4,6 +4,8 @@ PROJECT=main
 SRC=$(addsuffix .cc,$(PROJECT)) graphics_thread.cc read_thread.cc fourier_thread.cc kissfft/kiss_fft.c kissfft/kiss_fftr.c
 # SRC=main.cc graphics_thread.cc
 
+CFLAGS=-Wno-error=unused-variable
+
 .PHONY: all
 .DEFAULT_GOAL: all
 

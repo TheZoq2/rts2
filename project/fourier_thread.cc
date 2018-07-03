@@ -50,7 +50,7 @@ void* fourier_thread(void* args) {
 		for(int i = 0; i < FOURIER_SIZE; ++i) {
 			// Send the fourier data to the graphics core
 			fifos->w[SELF][GRAPHICS_CORE]->push(Data(fft_buffer[i].r * 100, FFT_Real));
-			fifos->w[SELF][GRAPHICS_CORE]->push(Data(fft_buffer[i].i * 100, FFT_Img));
+			// fifos->w[SELF][GRAPHICS_CORE]->push(Data(fft_buffer[i].i * 100, FFT_Img));
 		}
 	}
 

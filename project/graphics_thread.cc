@@ -1,5 +1,4 @@
-#include "graphics_thread.h"
-
+#include "graphics_thread.h" 
 #include <stdio.h>
 #include <helix.h>
 #include <render/render.h>
@@ -95,7 +94,7 @@ void* graphics_thread(void* args) {
 
 		// Be careful with printfs here, it will slow the loop down significantly
 		draw_values(data_buffer, current_index, DATA_BUFFER_SIZE, 0);
-		draw_values(fourier_reals, 0, FOURIER_SIZE, 200);
+		// draw_values(fourier_reals, 0, FOURIER_SIZE, 200);
 
 
 		render_flip_buffer();
