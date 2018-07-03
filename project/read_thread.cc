@@ -5,7 +5,7 @@
 #include "cores.h"
 #include "data.h"
 
-const int adc_delay_us = 1;
+const int adc_delay_us = 5;
 
 int square_wave(int iteration) {
 	if (iteration % 150 > 75) {
@@ -36,7 +36,7 @@ void* read_thread(void* args) {
 	int i = 0;
 	while(true) {
 		usleep(adc_delay_us);
-		int value = two_sin(i);
+		int value = sawtooth(i);
 		fifos->read_graphics_w->push(value);
 		fifos->read_fourier_w->push(value);
 		i++;

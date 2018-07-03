@@ -5,6 +5,7 @@
 #include <helix.h>
 
 #include "data.h"
+// #include "types.h"
 
 const int DUMMY_CORE = 0;
 const int READ_CORE = 1;
@@ -15,17 +16,17 @@ const int FOURIER_BUFFER_CORE = 5;
 const int CORE_AMOUNT = 6;
 
 struct Fifos {
-	CFifoPtr<int> read_graphics;
-	CFifo<int, CFifo<>::r>* read_graphics_r;
-	CFifo<int, CFifo<>::w>* read_graphics_w;
+	CFifoPtr<int16_t> read_graphics;
+	CFifo<int16_t, CFifo<>::r>* read_graphics_r;
+	CFifo<int16_t, CFifo<>::w>* read_graphics_w;
 
-	CFifoPtr<int> read_fourier;
-	CFifo<int, CFifo<>::r>* read_fourier_r;
-	CFifo<int, CFifo<>::w>* read_fourier_w;
+	CFifoPtr<int16_t> read_fourier;
+	CFifo<int16_t, CFifo<>::r>* read_fourier_r;
+	CFifo<int16_t, CFifo<>::w>* read_fourier_w;
 
-	CFifoPtr<float*> fourier_graphics;
-	CFifo<float*, CFifo<>::r>* fourier_graphics_r;
-	CFifo<float*, CFifo<>::w>* fourier_graphics_w;
+	CFifoPtr<std::pair<int16_t, float> > fourier_graphics;
+	CFifo<std::pair<int16_t, float>, CFifo<>::r>* fourier_graphics_r;
+	CFifo<std::pair<int16_t, float>, CFifo<>::w>* fourier_graphics_w;
 
 
 	bool valid() {

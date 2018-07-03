@@ -7,6 +7,7 @@
 #include "data.h"
 #include "cores.h"
 #include "defines.h"
+#include "fourier_params.h"
 
 
 pid_t create_thread(void* (*function)(void*), void* args, int core) {
@@ -28,15 +29,14 @@ int main(int argc, char **argv) {
 	printf("starting \n");
 
 
-	// Matrix of fifo read handles for inter-core communication. [from][to]
 	Fifos fifo_handles;
 
 	fifo_handles.read_graphics =
-		CFifo<int>::Create(READ_CORE, fifo_handles.read_graphics_w, GRAPHICS_CORE, fifo_handles.read_graphics_r, 32);
+		CFifo<int16_t>::Create(READ_CORE, fifo_handles.read_graphics_w, GRAPHICS_CORE, fifo_handles.read_graphics_r, FOURIER_SIZE);
 	fifo_handles.read_fourier =
-		CFifo<int>::Create(READ_CORE, fifo_handles.read_fourier_w, FOURIER_CORE, fifo_handles.read_fourier_r, 32);
+		CFifo<int16_t>::Create(READ_CORE, fifo_handles.read_fourier_w, FOURIER_CORE, fifo_handles.read_fourier_r, 32);
 	fifo_handles.fourier_graphics =
-		CFifo<float*>::Create(FOURIER_CORE, fifo_handles.fourier_graphics_w, GRAPHICS_CORE, fifo_handles.fourier_graphics_r, 2);
+		CFifo<std::pair<int16_t, float> >::Create(FOURIER_CORE, fifo_handles.fourier_graphics_w, GRAPHICS_CORE, fifo_handles.fourier_graphics_r, FOURIER_SIZE);
 
 	if (!fifo_handles.valid()) {
 		 ERREXIT2("Could not start read thread: %i", 0);

@@ -1,6 +1,7 @@
 #include "fourier_thread.h"
 
 #include <stdio.h>
+#include <utility>
 
 #include "data.h"
 #include "cores.h"
@@ -40,13 +41,12 @@ void* fourier_thread(void* args) {
 		kiss_fft_cpx fft_buffer[FOURIER_SIZE];
 		kiss_fftr(cfg, buffer, fft_buffer);
 
-		float* output_buffer = new float[FOURIER_SIZE];
-		// Convert to amplitude values
-		for(int i = 0; i < FOURIER_SIZE; ++i) {
-			output_buffer[i] = sqrt(pow(fft_buffer[i].r, 2) + pow(fft_buffer[i].i, 2));
+		for (int i = 0; i < FOURIER_SIZE; ++i) {
+			// TODO: Use abs instead of .r
+			float abs_value = sqrt(pow(fft_buffer[i].r, 2) + pow(fft_buffer[i].i, 2));
+			fifos->fourier_graphics_w->push(std::make_pair(i, abs_value * 100 / (FOURIER_SIZE / 2)));
 		}
 
-		fifos->fourier_graphics_w->push(output_buffer);
 	}
 
 	// Just to be sure, deallocate the fft config struct

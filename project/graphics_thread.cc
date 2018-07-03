@@ -13,14 +13,14 @@ const int SELF = GRAPHICS_CORE;
 
 const int DATA_BUFFER_SIZE = 640;
 
-void draw_values(int* values, int start, int length, int y_offset) {
+void draw_values(int* values, int start, int length, int y_offset, int x_step) {
 	// Redraw all the data
 	int prev_x = 0;
 	int prev_y = 0;
 	for (int i = 0; i < length; ++i) {
 		int index = (start + i) % length;
 
-		drawline(prev_x, prev_y + y_offset, i, values[index] + y_offset, white, 0, 0);
+		drawline(prev_x * x_step, -prev_y + y_offset, i * x_step, -values[index] + y_offset, white, 0, 0);
 		prev_x = i;
 		prev_y = values[index];
 	}
@@ -48,14 +48,16 @@ void* graphics_thread(void* args) {
 	}
 
 	int fourier_current_offset = 0;
-	// int fourier_reals[FOURIER_SIZE];
+	int fourier_reals[FOURIER_SIZE];
 	
 
 	int current_index = 0;
 
+	time_t last_frame = clock();
+
 	while(true) {
 		// Read data from the producer thread
-		while(!fifos->read_graphics_r->empty()) {
+		if(!fifos->read_graphics_r->empty()) {
 			int value = fifos->read_graphics_r->front();
 			fifos->read_graphics_r->pop();
 
@@ -64,24 +66,26 @@ void* graphics_thread(void* args) {
 		}
 
 		// Read data from the fourier thread
-		while(!fifos->fourier_graphics_r->empty()) {
-			float* data_ptr = fifos->fourier_graphics_r->front();
+		if(!fifos->fourier_graphics_r->empty()) {
+			std::pair<int, float> data = fifos->fourier_graphics_r->front();
 			fifos->fourier_graphics_r->pop();
 
-			for(int i = 0; i < FOURIER_SIZE; ++i) {
-				fourier_reals[i] = data_ptr[i] * 100 / FOURIER_SIZE;
-			}
-			delete[] data_ptr;
+			fourier_reals[data.first] = data.second;
 		}
 
-		fillrect(0, 0, 640, 480, black);
 
-		// Be careful with printfs here, it will slow the loop down significantly
-		draw_values(data_buffer, current_index, DATA_BUFFER_SIZE, 100);
-		draw_values(fourier_reals, 0, FOURIER_SIZE, 250);
+		// If it is time to render another frame
+		if ((clock() - last_frame) / (double) CLOCKS_PER_SEC > 0.01) {
+			last_frame = clock();
 
+			fillrect(0, 0, 640, 480, black);
 
-		render_flip_buffer();
+			draw_values(data_buffer, current_index, DATA_BUFFER_SIZE, 100, 1);
+			draw_values(fourier_reals, 0, FOURIER_SIZE, 250, 3);
+
+			render_flip_buffer();
+		}
+
 	}
 	return 0;
 }
