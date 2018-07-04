@@ -24,7 +24,7 @@ void* trigger_thread(void* args) {
 			samples_sent++;
 		}
 		// Check if this was a trigger
-		else if (was_high && value < -25 || (!was_high) && value > 25 ) {
+		else if (was_high && value < 0 || (!was_high) && value > 0 || true) {
 			samples_sent = 0;
 		}
 

@@ -53,9 +53,11 @@ void* graphics_thread(void* args) {
 
 	int current_index = 0;
 
-	time_t last_frame = clock();
+	unsigned int last_frame = get_clock();
+	unsigned int last_render_time = 0;
 
 	while(true) {
+		int loop_start = get_clock();
 		// Read data from the producer thread
 		if(!fifos->trigger_graphics_r->empty()) {
 			int value = fifos->trigger_graphics_r->front();
@@ -75,15 +77,20 @@ void* graphics_thread(void* args) {
 
 
 		// If it is time to render another frame
-		if ((clock() - last_frame) / (double) CLOCKS_PER_SEC > 0.01) {
-			last_frame = clock();
-
+		if ((get_clock() - last_frame) > 1000) {
 			fillrect(0, 0, 640, 480, black);
 
 			draw_values(data_buffer, current_index, DATA_BUFFER_SIZE, 100, 1);
 			draw_values(fourier_reals, 0, FOURIER_SIZE, 450, 3);
 
+			char text_buffer[32];
+			sprintf(text_buffer, "Frame time (ms)%f", last_render_time / 1000.);
+			drawstring(500, 10, text_buffer, red);
+
 			render_flip_buffer();
+			last_frame = get_clock();
+
+			last_render_time = last_frame - loop_start;
 		}
 
 	}

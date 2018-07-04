@@ -37,7 +37,7 @@ int main(int argc, char **argv) {
 	fifo_handles.trigger_graphics =
 		CFifo<int16_t>::Create(TRIGGER_CORE, fifo_handles.trigger_graphics_w, GRAPHICS_CORE, fifo_handles.trigger_graphics_r, FOURIER_SIZE);
 	fifo_handles.trigger_fourier =
-		CFifo<int16_t>::Create(TRIGGER_CORE, fifo_handles.trigger_fourier_w, FOURIER_CORE, fifo_handles.trigger_fourier_r, 32);
+		CFifo<int16_t>::Create(TRIGGER_CORE, fifo_handles.trigger_fourier_w, FOURIER_CORE, fifo_handles.trigger_fourier_r, 1);
 	fifo_handles.fourier_graphics =
 		CFifo<std::pair<int16_t, float> >::Create(FOURIER_CORE, fifo_handles.fourier_graphics_w, GRAPHICS_CORE, fifo_handles.fourier_graphics_r, FOURIER_SIZE);
 
