@@ -9,6 +9,8 @@
 #include "defines.h"
 #include "fourier_params.h"
 #include "trigger_thread.h"
+#include "graphics_command.h"
+#include "fourier_draw_thread.h"
 
 
 pid_t create_thread(void* (*function)(void*), void* args, int core) {
@@ -38,8 +40,16 @@ int main(int argc, char **argv) {
 		CFifo<int16_t>::Create(TRIGGER_CORE, fifo_handles.trigger_graphics_w, GRAPHICS_CORE, fifo_handles.trigger_graphics_r, FOURIER_SIZE);
 	fifo_handles.trigger_fourier =
 		CFifo<int16_t>::Create(TRIGGER_CORE, fifo_handles.trigger_fourier_w, FOURIER_CORE, fifo_handles.trigger_fourier_r, 1);
-	fifo_handles.fourier_graphics =
-		CFifo<std::pair<int16_t, float> >::Create(FOURIER_CORE, fifo_handles.fourier_graphics_w, GRAPHICS_CORE, fifo_handles.fourier_graphics_r, FOURIER_SIZE);
+	fifo_handles.fourier_fg =
+		CFifo<std::pair<int16_t, float> >::Create(FOURIER_CORE, fifo_handles.fourier_fg_w, FOURIER_GRAPHICS_CORE, fifo_handles.fourier_fg_r, FOURIER_SIZE);
+	fifo_handles.fg_gcommand =
+		CFifo<bool>::Create(FOURIER_GRAPHICS_CORE, fifo_handles.fg_gcommand_w, GRAPHICS_COMMAND_CORE, fifo_handles.fg_gcommand_r, 1);
+	fifo_handles.gcommand_fg =
+		CFifo<bool>::Create(GRAPHICS_COMMAND_CORE, fifo_handles.gcommand_fg_w, FOURIER_GRAPHICS_CORE, fifo_handles.gcommand_fg_r, 1);
+	fifo_handles.graphics_gcommand =
+		CFifo<bool>::Create(GRAPHICS_CORE, fifo_handles.graphics_gcommand_w, GRAPHICS_COMMAND_CORE, fifo_handles.graphics_gcommand_r, 1);
+	fifo_handles.gcommand_graphics =
+		CFifo<bool>::Create(GRAPHICS_COMMAND_CORE, fifo_handles.gcommand_graphics_w, GRAPHICS_CORE, fifo_handles.gcommand_graphics_r, 1);
 
 	if (!fifo_handles.valid()) {
 		 ERREXIT2("Could not start read thread: %i", 0);
@@ -49,6 +59,8 @@ int main(int argc, char **argv) {
 	pid_t graphics_pid = create_thread(graphics_thread, &fifo_handles, GRAPHICS_CORE);
 	pid_t fourier_pid = create_thread(fourier_thread, &fifo_handles, FOURIER_CORE);
 	pid_t trigger_pid = create_thread(trigger_thread, &fifo_handles, TRIGGER_CORE);
+	pid_t fg_pid = create_thread(fourier_draw_thread, &fifo_handles, FOURIER_GRAPHICS_CORE);
+	pid_t gcommand_pid = create_thread(graphics_command_thread, &fifo_handles, GRAPHICS_COMMAND_CORE);
 
 	// FIFOs are destroyed when the pointers goes out of scope
 	if(int e=WaitProcess(read_pid, NULL, READ_CORE)) {
@@ -61,7 +73,13 @@ int main(int argc, char **argv) {
 		ERREXIT2("Waiting on graphics thread % i@%i: %i\n", graphics_pid, 3, e);
 	}
 	if(int e=WaitProcess(trigger_pid, NULL, TRIGGER_CORE)) {
-		ERREXIT2("Waiting on trigger thread % i@%i: %i\n", graphics_pid, 3, e);
+		ERREXIT2("Waiting on trigger thread % i@%i: %i\n", trigger_pid, 3, e);
+	}
+	if(int e=WaitProcess(fg_pid, NULL, FOURIER_GRAPHICS_CORE)) {
+		ERREXIT2("Waiting on fourier_graphics thread % i@%i: %i\n", fg_pid, 3, e);
+	}
+	if(int e=WaitProcess(gcommand_pid, NULL, GRAPHICS_COMMAND_CORE)) {
+		ERREXIT2("Waiting on graphics command thread % i@%i: %i\n", gcommand_pid, 3, e);
 	}
 
 	return 0;

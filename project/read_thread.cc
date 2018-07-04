@@ -21,7 +21,7 @@ int sawtooth(int iteration) {
 }
 
 int sin_wave(int iteration) {
-	return 100 * sin(iteration / (16.) * 3.14);
+	return 100 * sin(iteration / (250.) * 3.14);
 }
 
 int two_sin(int iteration) {

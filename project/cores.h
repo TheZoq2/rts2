@@ -7,15 +7,13 @@
 #include "data.h"
 // #include "types.h"
 
-const int DUMMY_CORE = 0;
 const int READ_CORE = 1;
 const int GRAPHICS_CORE = 2;
 const int FOURIER_CORE = 3;
-const int PEAK_TO_PEAK_CORE = 4;
-const int FOURIER_BUFFER_CORE = 5;
-const int TRIGGER_CORE = 6;
-const int COMMAND_CORE = 7;
-const int CORE_AMOUNT = 8;
+const int TRIGGER_CORE = 4;
+const int FOURIER_GRAPHICS_CORE = 5;
+const int GRAPHICS_COMMAND_CORE = 6;
+const int CORE_AMOUNT = 7;
 
 struct Fifos {
 	CFifoPtr<int16_t> read_trigger;
@@ -30,10 +28,23 @@ struct Fifos {
 	CFifo<int16_t, CFifo<>::r>* trigger_fourier_r;
 	CFifo<int16_t, CFifo<>::w>* trigger_fourier_w;
 
-	CFifoPtr<std::pair<int16_t, float> > fourier_graphics;
-	CFifo<std::pair<int16_t, float>, CFifo<>::r>* fourier_graphics_r;
-	CFifo<std::pair<int16_t, float>, CFifo<>::w>* fourier_graphics_w;
+	CFifoPtr<std::pair<int16_t, float> > fourier_fg;
+	CFifo<std::pair<int16_t, float>, CFifo<>::r>* fourier_fg_r;
+	CFifo<std::pair<int16_t, float>, CFifo<>::w>* fourier_fg_w;
 
+	CFifoPtr<bool> graphics_gcommand;
+	CFifo<bool, CFifo<>::r>* graphics_gcommand_r;
+	CFifo<bool, CFifo<>::w>* graphics_gcommand_w;
+	CFifoPtr<bool> gcommand_graphics;
+	CFifo<bool, CFifo<>::r>* gcommand_graphics_r;
+	CFifo<bool, CFifo<>::w>* gcommand_graphics_w;
+
+	CFifoPtr<bool> fg_gcommand;
+	CFifo<bool, CFifo<>::r>* fg_gcommand_r;
+	CFifo<bool, CFifo<>::w>* fg_gcommand_w;
+	CFifoPtr<bool> gcommand_fg;
+	CFifo<bool, CFifo<>::r>* gcommand_fg_r;
+	CFifo<bool, CFifo<>::w>* gcommand_fg_w;
 
 	bool valid() {
 		if(!read_trigger.valid()) {
@@ -48,8 +59,24 @@ struct Fifos {
 			printf("trigger->fourier fifo was invalid\n");
 			return false;
 		}
-		if(!fourier_graphics.valid()) {
-			printf("fourier->graphics fifo was invalid\n");
+		if(!fourier_fg.valid()) {
+			printf("fourier->foureier_graphics fifo was invalid\n");
+			return false;
+		}
+		if(!graphics_gcommand.valid()) {
+			printf("graphics->graphics_command fifo was invalid\n");
+			return false;
+		}
+		if(!gcommand_graphics.valid()) {
+			printf("gcommand->graphics fifo was invalid\n");
+			return false;
+		}
+		if(!fg_gcommand.valid()) {
+			printf("fourier_graphics->graphics_command fifo was invalid\n");
+			return false;
+		}
+		if(!gcommand_fg.valid()) {
+			printf("graphics_command->fourier graphics fifo was invalid\n");
 			return false;
 		}
 

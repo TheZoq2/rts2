@@ -18,7 +18,7 @@ void* trigger_thread(void* args) {
 		fifos->read_trigger_r->pop();
 
 		// If we have already triggered and not sent a full frame to the display
-		if(samples_sent < CHUNK_SIZE || true) {
+		if(samples_sent < CHUNK_SIZE) {
 			fifos->trigger_graphics_w->push(value);
 			fifos->trigger_fourier_w->push(value);
 			samples_sent++;
