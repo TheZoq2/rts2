@@ -14,7 +14,8 @@ const int FOURIER_CORE = 3;
 const int PEAK_TO_PEAK_CORE = 4;
 const int FOURIER_BUFFER_CORE = 5;
 const int TRIGGER_CORE = 6;
-const int CORE_AMOUNT = 7;
+const int COMMAND_CORE = 7;
+const int CORE_AMOUNT = 8;
 
 struct Fifos {
 	CFifoPtr<int16_t> read_trigger;

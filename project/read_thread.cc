@@ -21,7 +21,7 @@ int sawtooth(int iteration) {
 }
 
 int sin_wave(int iteration) {
-	return 100 * sin(iteration / 16. * 3.14);
+	return 100 * sin(iteration / (16.) * 3.14);
 }
 
 int two_sin(int iteration) {
@@ -57,8 +57,8 @@ void* read_thread(void* args) {
 	int i = 0;
 	while(true) {
 		usleep(adc_delay_us);
-		//int value = periodic(i, random_and_square_wave, 10000, 512);
-		//int value = with_noise(i, sin_wave, 1/4.);
+		// int value = periodic(i, random_and_square_wave, 10000, 256);
+		// int value = with_noise(i, sin_wave, 1/4.);
 		int value = sin_wave(i);
 		fifos->read_trigger_w->push(value);
 		i++;
