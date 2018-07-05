@@ -28,14 +28,14 @@ void* graphics_command_thread(void* args) {
 
 	unsigned int last_frame = get_microseconds();
 	unsigned int last_render_time = 0;
-	int frame_times[FRAME_TIME_AMOUNT] = {0};
+	int8_t frame_times[FRAME_TIME_AMOUNT] = {0};
 	int frame_time_offset = 0;
 
 	while(true) {
 		unsigned int loop_start = get_microseconds();
 
 		// If it is time to render another frame
-		if ((get_microseconds() - last_frame) > 1000) {
+		if ((get_microseconds() - last_frame) > 1000 || true) {
 			// Tell the graphics threads to draw
 			fifos->gcommand_graphics_w->push(true);
 			fifos->gcommand_fg_w->push(true);

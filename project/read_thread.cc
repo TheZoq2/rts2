@@ -21,7 +21,7 @@ int sawtooth(int iteration) {
 }
 
 int sin_wave(int iteration) {
-	return 100 * sin(iteration / (250.) * 3.14);
+	return 100 * sin(iteration / (1000.) * 3.14);
 }
 
 int two_sin(int iteration) {
@@ -57,12 +57,17 @@ void* read_thread(void* args) {
 	int i = 0;
 	while(true) {
 		usleep(adc_delay_us);
+		Datachunk datachunk;
 		// int value = periodic(i, random_and_square_wave, 10000, 256);
-		int value = random_and_square_wave(i);
-		// int value = with_noise(i, sin_wave, 1/4.);
+		// int value = random_and_square_wave(i);
+		int value = with_noise(i, sin_wave, 1/4.);
 		// int value = sin_wave(i);
-		fifos->read_trigger_w->push(value);
+		//fifos->read_trigger_w->push(value);
+		datachunk.data[i % CHUNK_SIZE] = value;
 		i++;
+		if (i % CHUNK_SIZE == 0) {
+			fifos->read_trigger_w->push(datachunk);
+		}
 	}
 	return 0;
 }

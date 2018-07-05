@@ -1,6 +1,6 @@
 #include "graphics_util.h"
 
-void draw_values(int* values, int start, int length, int y_offset, int x_step, int x_start) {
+void draw_values(int8_t* values, int start, int length, int y_offset, int x_step, int x_start) {
 	// Redraw all the data
 	int prev_x = 0;
 	int prev_y = values[0];

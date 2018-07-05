@@ -21,6 +21,7 @@ void* fourier_draw_thread(void* args) {
 	int fourier_reals[FOURIER_SIZE];
 
 	while(true) {
+		/*
 		// Read data from the fourier thread
 		if(!fifos->fourier_fg_r->empty()) {
 			std::pair<int, float> data = fifos->fourier_fg_r->front();
@@ -28,13 +29,14 @@ void* fourier_draw_thread(void* args) {
 
 			fourier_reals[data.first] = data.second;
 		}
+		*/
 
 		// If it is time to render another frame
 		if (!fifos->gcommand_fg_r->empty()) {
 			fifos->gcommand_fg_r->pop();
 			fillrect(0, 200, 640, 500, black);
 
-			draw_values(fourier_reals, 0, FOURIER_SIZE, 450, 3);
+			// draw_values(fourier_reals, 0, FOURIER_SIZE, 450, 3);
 
 			// FlushDCache();
 			render_flush();

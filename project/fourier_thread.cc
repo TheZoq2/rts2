@@ -24,6 +24,7 @@ void* fourier_thread(void* args) {
 	kiss_fftr_cfg cfg = kiss_fftr_alloc(NFFT, 0, NULL, NULL);
 
 	while(true) {
+		/*
 		int buffer_index = 0;
 		float buffer[NFFT];
 
@@ -49,6 +50,7 @@ void* fourier_thread(void* args) {
 			float abs_value = sqrt(pow(fft_buffer[i].r, 2) + pow(fft_buffer[i].i, 2));
 			fifos->fourier_fg_w->push(std::make_pair(i, abs_value * 100 / (FOURIER_SIZE / 2)));
 		}
+		*/
 	}
 
 	// Just to be sure, deallocate the fft config struct

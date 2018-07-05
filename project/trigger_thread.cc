@@ -3,7 +3,7 @@
 #include "cores.h"
 #include "data.h"
 
-const int CHUNK_SIZE = 500;
+// const int CHUNK_SIZE = 500;
 
 void* trigger_thread(void* args) {
 	Fifos* fifos = (Fifos*) args;
@@ -14,9 +14,12 @@ void* trigger_thread(void* args) {
 
 	while (true) {
 		// Read a value from the fifo
-		int value = fifos->read_trigger_r->front();
+		Datachunk value = fifos->read_trigger_r->front();
 		fifos->read_trigger_r->pop();
 
+		fifos->trigger_graphics_w->push(value);
+
+		/*
 		// If we have already triggered and not sent a full frame to the display
 		if(samples_sent < CHUNK_SIZE || true) {
 			fifos->trigger_graphics_w->push(value);
@@ -29,5 +32,6 @@ void* trigger_thread(void* args) {
 		}
 
 		if(value < 0) {was_high = false;} else {was_high = true;};
+		*/
 	}
 }

@@ -13,7 +13,7 @@
 
 const int SELF = GRAPHICS_CORE;
 
-const int DATA_BUFFER_SIZE = 500;
+const int DATA_BUFFER_SIZE = 250;
 
 void* graphics_thread(void* args) {
 	Fifos* fifos = (Fifos*) args;
@@ -37,27 +37,23 @@ void* graphics_thread(void* args) {
 
 	while(true) {
 		// Read data from the producer thread
-		if(!fifos->trigger_graphics_r->empty()) {
-			int value = fifos->trigger_graphics_r->front();
+		if(!fifos->trigger_graphics_r->empty() && !fifos->gcommand_graphics_r->empty()) {
+			unsigned int draw_start = get_microseconds();
+			Datachunk data = fifos->trigger_graphics_r->front();
 			fifos->trigger_graphics_r->pop();
-
-			data_buffer[current_index] = value;
-			current_index = (current_index + 1) % DATA_BUFFER_SIZE;
-		}
-
-		// If it is time to render another frame
-		if (!fifos->gcommand_graphics_r->empty()) {
 			fifos->gcommand_graphics_r->pop();
-			fillrect(0, 0, 640, 200, black);
 
-			draw_values(data_buffer, current_index, DATA_BUFFER_SIZE, 100, 1, 0);
+			fillrect(0, 0, 500, 200, black);
+			draw_values(data.data, CHUNK_SIZE-DATA_BUFFER_SIZE, DATA_BUFFER_SIZE, 100, 1, 0);
 
 			// FlushDCache();
 			render_flush();
 
+			unsigned int draw_time = get_microseconds() - draw_start;
+
+			// printf("%i\n", draw_time);
 			fifos->graphics_gcommand_w->push(true);
 		}
-
 	}
 	return 0;
 }

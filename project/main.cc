@@ -27,6 +27,10 @@ pid_t create_thread(void* (*function)(void*), void* args, int core) {
 	return pid;
 }
 
+struct Test {
+	int8_t data[4096];
+};
+
 
 int main(int argc, char **argv) {
 	printf("starting \n");
@@ -35,11 +39,11 @@ int main(int argc, char **argv) {
 	Fifos fifo_handles;
 
 	fifo_handles.read_trigger =
-		CFifo<int16_t>::Create(READ_CORE, fifo_handles.read_trigger_w, TRIGGER_CORE, fifo_handles.read_trigger_r, 1);
+		CFifo<Datachunk>::Create(READ_CORE, fifo_handles.read_trigger_w, TRIGGER_CORE, fifo_handles.read_trigger_r, 1);
 	fifo_handles.trigger_graphics =
-		CFifo<int16_t>::Create(TRIGGER_CORE, fifo_handles.trigger_graphics_w, GRAPHICS_CORE, fifo_handles.trigger_graphics_r, FOURIER_SIZE);
+		CFifo<Datachunk>::Create(TRIGGER_CORE, fifo_handles.trigger_graphics_w, GRAPHICS_CORE, fifo_handles.trigger_graphics_r, 1);
 	fifo_handles.trigger_fourier =
-		CFifo<int16_t>::Create(TRIGGER_CORE, fifo_handles.trigger_fourier_w, FOURIER_CORE, fifo_handles.trigger_fourier_r, 1);
+		CFifo<Datachunk>::Create(TRIGGER_CORE, fifo_handles.trigger_fourier_w, FOURIER_CORE, fifo_handles.trigger_fourier_r, 1);
 	fifo_handles.fourier_fg =
 		CFifo<std::pair<int16_t, float> >::Create(FOURIER_CORE, fifo_handles.fourier_fg_w, FOURIER_GRAPHICS_CORE, fifo_handles.fourier_fg_r, FOURIER_SIZE);
 	fifo_handles.fg_gcommand =
@@ -50,6 +54,10 @@ int main(int argc, char **argv) {
 		CFifo<bool>::Create(GRAPHICS_CORE, fifo_handles.graphics_gcommand_w, GRAPHICS_COMMAND_CORE, fifo_handles.graphics_gcommand_r, 1);
 	fifo_handles.gcommand_graphics =
 		CFifo<bool>::Create(GRAPHICS_COMMAND_CORE, fifo_handles.gcommand_graphics_w, GRAPHICS_CORE, fifo_handles.gcommand_graphics_r, 1);
+
+	CFifo<Test, CFifo<>::r>* r;
+	CFifo<Test, CFifo<>::w>* w;
+	CFifo<Test>::Create(16, w, 17, r, 1);
 
 	if (!fifo_handles.valid()) {
 		 ERREXIT2("A fifo handle was invalid\n", 0);

@@ -6,6 +6,6 @@
 #include <render/render.h>
 
 
-void draw_values(int* values, int start, int length, int y_offset, int x_step, int x_start=0);
+void draw_values(int8_t* values, int start, int length, int y_offset, int x_step, int x_start=0);
 
 #endif

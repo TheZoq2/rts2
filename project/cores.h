@@ -15,18 +15,24 @@ const int FOURIER_GRAPHICS_CORE = 5;
 const int GRAPHICS_COMMAND_CORE = 6;
 const int CORE_AMOUNT = 7;
 
+const int CHUNK_SIZE = 256;
+
+struct Datachunk {
+	int8_t data[CHUNK_SIZE];
+};
+
 struct Fifos {
-	CFifoPtr<int16_t> read_trigger;
-	CFifo<int16_t, CFifo<>::r>* read_trigger_r;
-	CFifo<int16_t, CFifo<>::w>* read_trigger_w;
+	CFifoPtr<Datachunk> read_trigger;
+	CFifo<Datachunk, CFifo<>::r>* read_trigger_r;
+	CFifo<Datachunk, CFifo<>::w>* read_trigger_w;
 
-	CFifoPtr<int16_t> trigger_graphics;
-	CFifo<int16_t, CFifo<>::r>* trigger_graphics_r;
-	CFifo<int16_t, CFifo<>::w>* trigger_graphics_w;
+	CFifoPtr<Datachunk> trigger_graphics;
+	CFifo<Datachunk, CFifo<>::r>* trigger_graphics_r;
+	CFifo<Datachunk, CFifo<>::w>* trigger_graphics_w;
 
-	CFifoPtr<int16_t> trigger_fourier;
-	CFifo<int16_t, CFifo<>::r>* trigger_fourier_r;
-	CFifo<int16_t, CFifo<>::w>* trigger_fourier_w;
+	CFifoPtr<Datachunk> trigger_fourier;
+	CFifo<Datachunk, CFifo<>::r>* trigger_fourier_r;
+	CFifo<Datachunk, CFifo<>::w>* trigger_fourier_w;
 
 	CFifoPtr<std::pair<int16_t, float> > fourier_fg;
 	CFifo<std::pair<int16_t, float>, CFifo<>::r>* fourier_fg_r;
