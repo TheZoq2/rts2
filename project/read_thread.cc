@@ -58,8 +58,9 @@ void* read_thread(void* args) {
 	while(true) {
 		usleep(adc_delay_us);
 		// int value = periodic(i, random_and_square_wave, 10000, 256);
+		int value = random_and_square_wave(i);
 		// int value = with_noise(i, sin_wave, 1/4.);
-		int value = sin_wave(i);
+		// int value = sin_wave(i);
 		fifos->read_trigger_w->push(value);
 		i++;
 	}

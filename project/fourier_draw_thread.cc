@@ -36,7 +36,8 @@ void* fourier_draw_thread(void* args) {
 
 			draw_values(fourier_reals, 0, FOURIER_SIZE, 450, 3);
 
-			FlushDCache();
+			// FlushDCache();
+			render_flush();
 
 			fifos->fg_gcommand_w->push(true);
 		}

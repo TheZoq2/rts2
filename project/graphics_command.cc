@@ -2,15 +2,9 @@
 
 #include "cores.h"
 #include "util.h"
+#include "graphics_util.h"
 
-unsigned int get_microseconds() {
-	unsigned int val = get_clock();
-
-	int seconds = val >> 20;
-	int microseconds = val & 0xfffff;
-
-	return seconds * 1000000 + microseconds;
-}
+const int FRAME_TIME_AMOUNT = 75;
 
 void* graphics_command_thread(void* args) {
 	Fifos* fifos = (Fifos*) args;
@@ -34,14 +28,14 @@ void* graphics_command_thread(void* args) {
 
 	unsigned int last_frame = get_microseconds();
 	unsigned int last_render_time = 0;
-	int frame_times[100] = {0};
+	int frame_times[FRAME_TIME_AMOUNT] = {0};
 	int frame_time_offset = 0;
 
 	while(true) {
 		unsigned int loop_start = get_microseconds();
 
 		// If it is time to render another frame
-		if ((get_microseconds() - last_frame) > 5000) {
+		if ((get_microseconds() - last_frame) > 1000) {
 			// Tell the graphics threads to draw
 			fifos->gcommand_graphics_w->push(true);
 			fifos->gcommand_fg_w->push(true);
@@ -53,6 +47,8 @@ void* graphics_command_thread(void* args) {
 			sprintf(text_buffer, "Frame time (ms)%f", last_render_time / 1000.);
 			drawstring(500, 10, text_buffer, red);
 
+			draw_values(frame_times, frame_time_offset, FRAME_TIME_AMOUNT, 50, 1, 500);
+
 			// Wait for the drawing threads to draw their stuff
 			fifos->graphics_gcommand_r->pop();
 			fifos->fg_gcommand_r->pop();
@@ -62,7 +58,7 @@ void* graphics_command_thread(void* args) {
 
 			last_render_time = last_frame - loop_start;
 			frame_times[frame_time_offset] = last_render_time / 1000.;
-			frame_time_offset = (frame_time_offset + 1) % 100;
+			frame_time_offset = (frame_time_offset + 1) % FRAME_TIME_AMOUNT;
 		}
 
 	}

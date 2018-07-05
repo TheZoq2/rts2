@@ -3,4 +3,6 @@
 
 #define validate_fifo(fifo, name) if(fifo->validate() != 0) {printf("Fifo %s invalid\n", name);}
 
+unsigned int get_microseconds();
+
 #endif

@@ -50,9 +50,10 @@ void* graphics_thread(void* args) {
 			fifos->gcommand_graphics_r->pop();
 			fillrect(0, 0, 640, 200, black);
 
-			draw_values(data_buffer, current_index, DATA_BUFFER_SIZE, 100, 1);
+			draw_values(data_buffer, current_index, DATA_BUFFER_SIZE, 100, 1, 0);
 
-			FlushDCache();
+			// FlushDCache();
+			render_flush();
 
 			fifos->graphics_gcommand_w->push(true);
 		}
