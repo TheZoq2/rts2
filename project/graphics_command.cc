@@ -1,6 +1,7 @@
 #include "graphics_command.h"
 
 #include "cores.h"
+#include "util.h"
 
 unsigned int get_microseconds() {
 	unsigned int val = get_clock();
@@ -12,7 +13,12 @@ unsigned int get_microseconds() {
 }
 
 void* graphics_command_thread(void* args) {
-	Fifos* fifos = (Fifos*) fifos;
+	Fifos* fifos = (Fifos*) args;
+
+	validate_fifo(fifos->graphics_gcommand_r, "graphics_gcommand_r");
+	validate_fifo(fifos->fg_gcommand_r, "fg_gcommand_r");
+	validate_fifo(fifos->gcommand_graphics_w, "gcommand_graphics_w");
+	validate_fifo(fifos->gcommand_fg_w, "gcommand_fg_w");
 
 	// Setup display
 	if(render_init(1) != RENDER_OK) {
@@ -37,12 +43,9 @@ void* graphics_command_thread(void* args) {
 		// If it is time to render another frame
 		if ((get_microseconds() - last_frame) > 5000) {
 			// Tell the graphics threads to draw
-			printf("Telling graphics thread to draw\n");
 			fifos->gcommand_graphics_w->push(true);
-			printf("Telling fourier thread to draw\n");
 			fifos->gcommand_fg_w->push(true);
 
-			printf("Told both threads to draw\n");
 
 			// Redraw the right side of the screen
 			fillrect(500, 0, 640, 480, black);

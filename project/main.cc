@@ -52,7 +52,7 @@ int main(int argc, char **argv) {
 		CFifo<bool>::Create(GRAPHICS_COMMAND_CORE, fifo_handles.gcommand_graphics_w, GRAPHICS_CORE, fifo_handles.gcommand_graphics_r, 1);
 
 	if (!fifo_handles.valid()) {
-		 ERREXIT2("Could not start read thread: %i", 0);
+		 ERREXIT2("A fifo handle was invalid\n", 0);
 	}
 
 	pid_t read_pid = create_thread(read_thread, &fifo_handles, READ_CORE);

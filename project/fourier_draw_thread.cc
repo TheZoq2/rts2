@@ -2,6 +2,7 @@
 
 #include "data.h"
 #include "cores.h"
+#include "util.h"
 
 #include "graphics_util.h"
 
@@ -9,6 +10,10 @@
 
 void* fourier_draw_thread(void* args) {
 	Fifos* fifos = (Fifos*) args;
+
+	validate_fifo(fifos->fourier_fg_r, "fourier_fg_r");
+	validate_fifo(fifos->gcommand_fg_r, "gcommand_fg_r");
+	validate_fifo(fifos->fg_gcommand_w, "fg_gcommand_w");
 
 	printf("Fourier drawing thread starting\n");
 
@@ -24,18 +29,16 @@ void* fourier_draw_thread(void* args) {
 			fourier_reals[data.first] = data.second;
 		}
 
-		// TODO: Flush cache
 		// If it is time to render another frame
 		if (!fifos->gcommand_fg_r->empty()) {
-			printf("fourier: Starting draw\n");
 			fifos->gcommand_fg_r->pop();
 			fillrect(0, 200, 640, 500, black);
 
 			draw_values(fourier_reals, 0, FOURIER_SIZE, 450, 3);
 
-			printf("fourier: Telling graphics command that drawing is done\n");
+			FlushDCache();
+
 			fifos->fg_gcommand_w->push(true);
-			printf("fourier: Told graphics command that drawing is done\n");
 		}
 	}
 }
