@@ -27,6 +27,7 @@ pid_t create_thread(void* (*function)(void*), void* args, int core) {
 	return pid;
 }
 
+const int TRIG_GRAPHICS_SIZE = 36;
 
 int main(int argc, char **argv) {
 	printf("starting \n");
@@ -37,9 +38,9 @@ int main(int argc, char **argv) {
 	fifo_handles.read_trigger =
 		CFifo<int16_t>::Create(READ_CORE, fifo_handles.read_trigger_w, TRIGGER_CORE, fifo_handles.read_trigger_r, 1);
 	fifo_handles.trigger_graphics =
-		CFifo<int16_t>::Create(TRIGGER_CORE, fifo_handles.trigger_graphics_w, GRAPHICS_CORE, fifo_handles.trigger_graphics_r, FOURIER_SIZE);
+		CFifo<int16_t>::Create(TRIGGER_CORE, fifo_handles.trigger_graphics_w, GRAPHICS_CORE, fifo_handles.trigger_graphics_r, TRIG_GRAPHICS_SIZE);
 	fifo_handles.trigger_fourier =
-		CFifo<int16_t>::Create(TRIGGER_CORE, fifo_handles.trigger_fourier_w, FOURIER_CORE, fifo_handles.trigger_fourier_r, 1);
+		CFifo<int16_t>::Create(TRIGGER_CORE, fifo_handles.trigger_fourier_w, FOURIER_CORE, fifo_handles.trigger_fourier_r, 256);
 	fifo_handles.fourier_fg =
 		CFifo<std::pair<int16_t, float> >::Create(FOURIER_CORE, fifo_handles.fourier_fg_w, FOURIER_GRAPHICS_CORE, fifo_handles.fourier_fg_r, FOURIER_SIZE);
 	fifo_handles.fg_gcommand =
@@ -61,6 +62,13 @@ int main(int argc, char **argv) {
 	pid_t trigger_pid = create_thread(trigger_thread, &fifo_handles, TRIGGER_CORE);
 	pid_t fg_pid = create_thread(fourier_draw_thread, &fifo_handles, FOURIER_GRAPHICS_CORE);
 	pid_t gcommand_pid = create_thread(graphics_command_thread, &fifo_handles, GRAPHICS_COMMAND_CORE);
+
+	printf("read_pid: %i\n", read_pid);
+	printf("graphics_pid: %i\n", graphics_pid);
+	printf("fourier_pid: %i\n", fourier_pid);
+	printf("trigger_pid: %i\n", trigger_pid);
+	printf("fg_pid: %i\n", fg_pid);
+	printf("gcommand_pid: %i\n", gcommand_pid);
 
 	// FIFOs are destroyed when the pointers goes out of scope
 	if(int e=WaitProcess(read_pid, NULL, READ_CORE)) {

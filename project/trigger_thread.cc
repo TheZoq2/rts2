@@ -2,6 +2,7 @@
 
 #include "cores.h"
 #include "data.h"
+#include "util.h"
 
 const int CHUNK_SIZE = 500;
 
@@ -17,8 +18,10 @@ void* trigger_thread(void* args) {
 		int value = fifos->read_trigger_r->front();
 		fifos->read_trigger_r->pop();
 
+		// unsigned int start = get_microseconds();
+
 		// If we have already triggered and not sent a full frame to the display
-		if(samples_sent < CHUNK_SIZE || true) {
+		if(samples_sent < CHUNK_SIZE) {
 			fifos->trigger_graphics_w->push(value);
 			fifos->trigger_fourier_w->push(value);
 			samples_sent++;
@@ -29,5 +32,7 @@ void* trigger_thread(void* args) {
 		}
 
 		if(value < 0) {was_high = false;} else {was_high = true;};
+
+		// printf("Trig time %i\n", get_microseconds() - start);
 	}
 }

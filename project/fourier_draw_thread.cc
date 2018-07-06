@@ -22,7 +22,7 @@ void* fourier_draw_thread(void* args) {
 
 	while(true) {
 		// Read data from the fourier thread
-		if(!fifos->fourier_fg_r->empty()) {
+		while(!fifos->fourier_fg_r->empty()) {
 			std::pair<int, float> data = fifos->fourier_fg_r->front();
 			fifos->fourier_fg_r->pop();
 

@@ -24,6 +24,7 @@ void* fourier_thread(void* args) {
 	kiss_fftr_cfg cfg = kiss_fftr_alloc(NFFT, 0, NULL, NULL);
 
 	while(true) {
+		unsigned int start = get_microseconds();
 		int buffer_index = 0;
 		float buffer[NFFT];
 
@@ -39,16 +40,15 @@ void* fourier_thread(void* args) {
 
 		// Run the fourier transform
 		
-		unsigned int start = get_microseconds();
 		kiss_fft_cpx fft_buffer[FOURIER_SIZE];
 		kiss_fftr(cfg, buffer, fft_buffer);
-		unsigned int time = get_microseconds() - start;
-		printf("fourier processing time %i\n", time);
 
 		for (int i = 0; i < FOURIER_SIZE; ++i) {
 			float abs_value = sqrt(pow(fft_buffer[i].r, 2) + pow(fft_buffer[i].i, 2));
 			fifos->fourier_fg_w->push(std::make_pair(i, abs_value * 100 / (FOURIER_SIZE / 2)));
 		}
+		unsigned int time = get_microseconds() - start;
+		// printf("fourier processing time %i\n", time);
 	}
 
 	// Just to be sure, deallocate the fft config struct

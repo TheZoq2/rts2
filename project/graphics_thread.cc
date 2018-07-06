@@ -36,8 +36,10 @@ void* graphics_thread(void* args) {
 	int current_index = 0;
 
 	while(true) {
+		// unsigned int start = get_microseconds();
+
 		// Read data from the producer thread
-		if(!fifos->trigger_graphics_r->empty()) {
+		while(!fifos->trigger_graphics_r->empty()) {
 			int value = fifos->trigger_graphics_r->front();
 			fifos->trigger_graphics_r->pop();
 
@@ -58,6 +60,8 @@ void* graphics_thread(void* args) {
 			fifos->graphics_gcommand_w->push(true);
 		}
 
+		// unsigned int time = get_microseconds() - start;
+		// printf("Graphics time: %i\n", time);
 	}
 	return 0;
 }
