@@ -8,9 +8,9 @@
 // #include "types.h"
 
 const int READ_CORE = 1;
-const int GRAPHICS_CORE = 2;
-const int FOURIER_CORE = 3;
-const int TRIGGER_CORE = 4;
+const int TRIGGER_CORE = 2;
+const int GRAPHICS_CORE = 3;
+const int FOURIER_CORE = 4;
 const int FOURIER_GRAPHICS_CORE = 5;
 const int GRAPHICS_COMMAND_CORE = 6;
 const int CORE_AMOUNT = 7;

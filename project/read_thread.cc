@@ -56,7 +56,6 @@ void* read_thread(void* args) {
 
 	int i = 0;
 	while(true) {
-		usleep(adc_delay_us);
 		Datachunk datachunk;
 		// int value = periodic(i, random_and_square_wave, 10000, 256);
 		// int value = random_and_square_wave(i);
